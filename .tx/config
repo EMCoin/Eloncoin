@@ -1,0 +1,7 @@
+[main]
+host = https://www.transifex.com
+
+[eloncoin-project-translations.qt-translation-51x]
+file_filter = src/qt/locale/eloncoin_<lang>.ts
+source_file = src/qt/locale/eloncoin_en.ts
+source_lang = en

@@ -1,0 +1,6 @@
+usr/local/bin/eloncoin-qt usr/bin
+share/pixmaps/eloncoin32.xpm usr/share/pixmaps
+share/pixmaps/eloncoin16.xpm usr/share/pixmaps
+share/pixmaps/eloncoin128.png usr/share/pixmaps
+debian/eloncoin-qt.desktop usr/share/applications
+debian/eloncoin-qt.protocol usr/share/kde4/services/

@@ -1,0 +1,8 @@
+/usr/bin/eloncoin-cli		--	gen_context(system_u:object_r:eloncoin_exec_t,s0)
+/usr/sbin/eloncoind		--	gen_context(system_u:object_r:eloncoin_exec_t,s0)
+/usr/lib(64)?/eloncoin/eloncoind		--	gen_context(system_u:object_r:eloncoin_exec_t,s0)
+
+/etc/eloncoin(/.*)?		gen_context(system_u:object_r:eloncoin_conf_t,s0)
+/var/lib/eloncoin(/.*)?		gen_context(system_u:object_r:eloncoin_var_lib_t,s0)
+
+(/var)?/run/eloncoind(/.*)?   gen_context(system_u:object_r:eloncoin_var_run_t,s0)

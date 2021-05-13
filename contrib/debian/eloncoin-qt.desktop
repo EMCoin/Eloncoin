@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Name=ELONCOIN Core
+Comment=ELONCOIN P2P Cryptocurrency
+Comment[fr]=ELONCOIN, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=ELONCOIN, eşten eşe kriptografik sanal para birimi
+Exec=eloncoin-qt %u
+Terminal=false
+Type=Application
+Icon=eloncoin128
+MimeType=x-scheme-handler/eloncoin;
+Categories=Office;Finance;
+StartupWMClass=ElonCoin-qt

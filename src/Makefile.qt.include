@@ -1,0 +1,727 @@
+# Copyright (c) 2013-2016 The Bitcoin Core developers
+# Distributed under the MIT software license, see the accompanying
+# file COPYING or http://www.opensource.org/licenses/mit-license.php.
+
+bin_PROGRAMS += qt/eloncoin-qt
+EXTRA_LIBRARIES += qt/libbitcoinqt.a
+
+# eloncoin qt core #
+include Makefile.qt_locale.include
+
+QT_FORMS_UI = \
+  qt/forms/addressbookpage.ui \
+  qt/forms/askpassphrasedialog.ui \
+  qt/forms/coincontroldialog.ui \
+  qt/forms/editaddressdialog.ui \
+  qt/forms/helpmessagedialog.ui \
+  qt/forms/intro.ui \
+  qt/forms/openuridialog.ui \
+  qt/forms/optionsdialog.ui \
+  qt/forms/rpcconsole.ui \
+  qt/eloncoin/forms/loadingdialog.ui \
+  qt/eloncoin/forms/snackbar.ui \
+  qt/eloncoin/forms/navmenuwidget.ui \
+  qt/eloncoin/forms/lockunlock.ui \
+  qt/eloncoin/forms/expandablebutton.ui \
+  qt/eloncoin/forms/receivedialog.ui \
+  qt/eloncoin/forms/balancebubble.ui \
+  qt/eloncoin/forms/topbar.ui \
+  qt/eloncoin/forms/txrow.ui \
+  qt/eloncoin/forms/dashboardwidget.ui \
+  qt/eloncoin/forms/addresslabelrow.ui \
+  qt/eloncoin/forms/contactdropdownrow.ui \
+  qt/eloncoin/forms/mninfodialog.ui \
+  qt/eloncoin/forms/optionbutton.ui \
+  qt/eloncoin/forms/masternodewizarddialog.ui \
+  qt/eloncoin/forms/mnrow.ui \
+  qt/eloncoin/forms/masternodeswidget.ui \
+  qt/eloncoin/forms/myaddressrow.ui \
+  qt/eloncoin/forms/csrow.ui \
+  qt/eloncoin/forms/sendmemodialog.ui \
+  qt/eloncoin/forms/sendchangeaddressdialog.ui \
+  qt/eloncoin/forms/sendconfirmdialog.ui \
+  qt/eloncoin/forms/sendcustomfeedialog.ui \
+  qt/eloncoin/forms/sendmultirow.ui \
+  qt/eloncoin/forms/send.ui \
+  qt/eloncoin/forms/addnewaddressdialog.ui \
+  qt/eloncoin/forms/addnewcontactdialog.ui \
+  qt/eloncoin/forms/requestdialog.ui \
+  qt/eloncoin/forms/receivewidget.ui \
+  qt/eloncoin/forms/tooltipmenu.ui \
+  qt/eloncoin/forms/addresseswidget.ui \
+  qt/eloncoin/forms/defaultdialog.ui \
+  qt/eloncoin/forms/coldstakingwidget.ui \
+  qt/eloncoin/settings/forms/settingsbackupwallet.ui \
+  qt/eloncoin/settings/forms/settingsexportcsv.ui \
+  qt/eloncoin/settings/forms/settingsbittoolwidget.ui \
+  qt/eloncoin/settings/forms/settingsconsolewidget.ui \
+  qt/eloncoin/settings/forms/settingsdisplayoptionswidget.ui \
+  qt/eloncoin/settings/forms/settingsfaqwidget.ui \
+  qt/eloncoin/settings/forms/settingsinformationwidget.ui \
+  qt/eloncoin/settings/forms/settingsmainoptionswidget.ui \
+  qt/eloncoin/settings/forms/settingsmultisenddialog.ui \
+  qt/eloncoin/settings/forms/settingsmultisendwidget.ui \
+  qt/eloncoin/settings/forms/settingssignmessagewidgets.ui \
+  qt/eloncoin/settings/forms/settingswalletoptionswidget.ui \
+  qt/eloncoin/settings/forms/settingswalletrepairwidget.ui \
+  qt/eloncoin/settings/forms/settingswidget.ui \
+  qt/eloncoin/forms/welcomecontentwidget.ui \
+  qt/eloncoin/forms/splash.ui
+
+QT_MOC_CPP = \
+  qt/moc_addressbookpage.cpp \
+  qt/moc_addresstablemodel.cpp \
+  qt/moc_askpassphrasedialog.cpp \
+  qt/moc_bantablemodel.cpp \
+  qt/moc_bitcoinaddressvalidator.cpp \
+  qt/eloncoin/moc_eloncoingui.cpp \
+  qt/moc_bitcoinunits.cpp \
+  qt/moc_clientmodel.cpp \
+  qt/moc_coincontroldialog.cpp \
+  qt/moc_coincontroltreewidget.cpp \
+  qt/moc_csvmodelwriter.cpp \
+  qt/moc_editaddressdialog.cpp \
+  qt/moc_guiutil.cpp \
+  qt/moc_intro.cpp \
+  qt/moc_macdockiconhandler.cpp \
+  qt/moc_macnotificationhandler.cpp \
+  qt/moc_notificator.cpp \
+  qt/moc_openuridialog.cpp \
+  qt/moc_optionsdialog.cpp \
+  qt/moc_optionsmodel.cpp \
+  qt/moc_peertablemodel.cpp \
+  qt/moc_paymentserver.cpp \
+  qt/moc_qvalidatedlineedit.cpp \
+  qt/moc_qvaluecombobox.cpp \
+  qt/moc_recentrequeststablemodel.cpp \
+  qt/moc_rpcconsole.cpp \
+  qt/moc_trafficgraphwidget.cpp \
+  qt/moc_transactionfilterproxy.cpp \
+  qt/moc_transactiontablemodel.cpp \
+  qt/moc_utilitydialog.cpp \
+  qt/moc_walletmodel.cpp \
+  qt/eloncoin/moc_loadingdialog.cpp \
+  qt/eloncoin/moc_pwidget.cpp \
+  qt/eloncoin/moc_focuseddialog.cpp \
+  qt/eloncoin/moc_snackbar.cpp \
+  qt/eloncoin/moc_navmenuwidget.cpp \
+  qt/eloncoin/moc_lockunlock.cpp \
+  qt/eloncoin/moc_expandablebutton.cpp \
+  qt/eloncoin/moc_furabstractlistitemdelegate.cpp \
+  qt/eloncoin/moc_receivedialog.cpp \
+  qt/eloncoin/moc_pfborderimage.cpp \
+  qt/eloncoin/moc_topbar.cpp \
+  qt/eloncoin/moc_txrow.cpp \
+  qt/eloncoin/moc_dashboardwidget.cpp \
+  qt/eloncoin/moc_addresslabelrow.cpp \
+  qt/eloncoin/moc_contactdropdownrow.cpp \
+  qt/eloncoin/moc_mninfodialog.cpp \
+  qt/eloncoin/moc_optionbutton.cpp \
+  qt/eloncoin/moc_coldstakingmodel.cpp \
+  qt/eloncoin/moc_mnmodel.cpp \
+  qt/eloncoin/moc_masternodewizarddialog.cpp \
+  qt/eloncoin/moc_mnrow.cpp \
+  qt/eloncoin/moc_masternodeswidget.cpp \
+  qt/eloncoin/moc_myaddressrow.cpp \
+  qt/eloncoin/moc_csrow.cpp \
+  qt/eloncoin/moc_contactsdropdown.cpp \
+  qt/eloncoin/moc_sendchangeaddressdialog.cpp \
+  qt/eloncoin/moc_sendconfirmdialog.cpp \
+  qt/eloncoin/moc_sendcustomfeedialog.cpp \
+  qt/eloncoin/moc_sendmemodialog.cpp \
+  qt/eloncoin/moc_sendmultirow.cpp \
+  qt/eloncoin/moc_send.cpp \
+  qt/eloncoin/moc_addnewaddressdialog.cpp \
+  qt/eloncoin/moc_addnewcontactdialog.cpp \
+  qt/eloncoin/moc_requestdialog.cpp \
+  qt/eloncoin/moc_receivewidget.cpp \
+  qt/eloncoin/moc_tooltipmenu.cpp \
+  qt/eloncoin/moc_addresseswidget.cpp \
+  qt/eloncoin/moc_defaultdialog.cpp \
+  qt/eloncoin/moc_coldstakingwidget.cpp \
+  qt/eloncoin/settings/moc_settingsbackupwallet.cpp \
+  qt/eloncoin/settings/moc_settingsexportcsv.cpp \
+  qt/eloncoin/settings/moc_settingsbittoolwidget.cpp \
+  qt/eloncoin/settings/moc_settingsconsolewidget.cpp \
+  qt/eloncoin/settings/moc_settingsdisplayoptionswidget.cpp \
+  qt/eloncoin/settings/moc_settingsfaqwidget.cpp \
+  qt/eloncoin/settings/moc_settingsinformationwidget.cpp \
+  qt/eloncoin/settings/moc_settingsmainoptionswidget.cpp \
+  qt/eloncoin/settings/moc_settingsmultisenddialog.cpp \
+  qt/eloncoin/settings/moc_settingsmultisendwidget.cpp \
+  qt/eloncoin/settings/moc_settingssignmessagewidgets.cpp \
+  qt/eloncoin/settings/moc_settingswalletoptionswidget.cpp \
+  qt/eloncoin/settings/moc_settingswalletrepairwidget.cpp \
+  qt/eloncoin/settings/moc_settingswidget.cpp \
+  qt/eloncoin/moc_welcomecontentwidget.cpp \
+  qt/eloncoin/moc_splash.cpp
+
+BITCOIN_MM = \
+  qt/macdockiconhandler.mm \
+  qt/macnotificationhandler.mm
+
+QT_MOC = \
+  qt/eloncoin.moc \
+  qt/intro.moc \
+  qt/rpcconsole.moc \
+  qt/eloncoin/settings/moc_settingsconsolewidget.cpp
+
+QT_QRC_CPP = qt/qrc_eloncoin.cpp
+QT_QRC = qt/eloncoin.qrc
+QT_QRC_LOCALE_CPP = qt/qrc_eloncoin_locale.cpp
+QT_QRC_LOCALE = qt/eloncoin_locale.qrc
+
+PROTOBUF_CC = qt/paymentrequest.pb.cc
+PROTOBUF_H = qt/paymentrequest.pb.h
+PROTOBUF_PROTO = qt/paymentrequest.proto
+
+BITCOIN_QT_H = \
+  qt/addressbookpage.h \
+  qt/addresstablemodel.h \
+  qt/askpassphrasedialog.h \
+  qt/bantablemodel.h \
+  qt/bitcoinaddressvalidator.h \
+  qt/eloncoin/eloncoingui.h \
+  qt/bitcoinunits.h \
+  qt/clientmodel.h \
+  qt/coincontroldialog.h \
+  qt/coincontroltreewidget.h \
+  qt/csvmodelwriter.h \
+  qt/editaddressdialog.h \
+  qt/guiconstants.h \
+  qt/guiutil.h \
+  qt/intro.h \
+  qt/macdockiconhandler.h \
+  qt/macnotificationhandler.h \
+  qt/networkstyle.h \
+  qt/notificator.h \
+  qt/openuridialog.h \
+  qt/optionsdialog.h \
+  qt/optionsmodel.h \
+  qt/paymentrequestplus.h \
+  qt/paymentserver.h \
+  qt/peertablemodel.h \
+  qt/platformstyle.h \
+  qt/qvalidatedlineedit.h \
+  qt/qvaluecombobox.h \
+  qt/recentrequeststablemodel.h \
+  qt/rpcconsole.h \
+  qt/trafficgraphwidget.h \
+  qt/transactionfilterproxy.h \
+  qt/transactionrecord.h \
+  qt/transactiontablemodel.h \
+  qt/utilitydialog.h \
+  qt/walletmodel.h \
+  qt/walletmodeltransaction.h \
+  qt/eloncoin/prunnable.h \
+  qt/eloncoin/pfborderimage.h \
+  qt/eloncoin/loadingdialog.h \
+  qt/winshutdownmonitor.h \
+  qt/eloncoin/pwidget.h \
+  qt/eloncoin/focuseddialog.h \
+  qt/eloncoin/guitransactionsutils.h \
+  qt/eloncoin/snackbar.h \
+  qt/eloncoin/navmenuwidget.h \
+  qt/eloncoin/lockunlock.h \
+  qt/eloncoin/receivedialog.h \
+  qt/eloncoin/furlistrow.h \
+  qt/eloncoin/furabstractlistitemdelegate.h \
+  qt/eloncoin/txviewholder.h \
+  qt/eloncoin/qtutils.h \
+  qt/eloncoin/expandablebutton.h \
+  qt/eloncoin/balancebubble.h \
+  qt/eloncoin/topbar.h \
+  qt/eloncoin/txrow.h \
+  qt/eloncoin/addressholder.h \
+  qt/eloncoin/addressfilterproxymodel.h \
+  qt/eloncoin/dashboardwidget.h \
+  qt/eloncoin/addresslabelrow.h \
+  qt/eloncoin/contactdropdownrow.h \
+  qt/eloncoin/mninfodialog.h \
+  qt/eloncoin/optionbutton.h \
+  qt/eloncoin/coldstakingmodel.h \
+  qt/eloncoin/mnmodel.h \
+  qt/eloncoin/masternodewizarddialog.h \
+  qt/eloncoin/mnrow.h \
+  qt/eloncoin/masternodeswidget.h \
+  qt/eloncoin/myaddressrow.h \
+  qt/eloncoin/csrow.h \
+  qt/eloncoin/contactsdropdown.h \
+  qt/eloncoin/sendchangeaddressdialog.h \
+  qt/eloncoin/sendconfirmdialog.h \
+  qt/eloncoin/sendcustomfeedialog.h \
+  qt/eloncoin/sendmemodialog.h \
+  qt/eloncoin/sendmultirow.h \
+  qt/eloncoin/send.h \
+  qt/eloncoin/addnewaddressdialog.h \
+  qt/eloncoin/addnewcontactdialog.h \
+  qt/eloncoin/requestdialog.h \
+  qt/eloncoin/receivewidget.h \
+  qt/eloncoin/tooltipmenu.h \
+  qt/eloncoin/addresseswidget.h \
+  qt/eloncoin/defaultdialog.h \
+  qt/eloncoin/coldstakingwidget.h \
+  qt/eloncoin/settings/settingsbackupwallet.h \
+  qt/eloncoin/settings/settingsexportcsv.h \
+  qt/eloncoin/settings/settingsbittoolwidget.h \
+  qt/eloncoin/settings/settingsconsolewidget.h \
+  qt/eloncoin/settings/settingsdisplayoptionswidget.h \
+  qt/eloncoin/settings/settingsfaqwidget.h \
+  qt/eloncoin/settings/settingsinformationwidget.h \
+  qt/eloncoin/settings/settingsmainoptionswidget.h \
+  qt/eloncoin/settings/settingsmultisenddialog.h \
+  qt/eloncoin/settings/settingsmultisendwidget.h \
+  qt/eloncoin/settings/settingssignmessagewidgets.h \
+  qt/eloncoin/settings/settingswalletoptionswidget.h \
+  qt/eloncoin/settings/settingswalletrepairwidget.h \
+  qt/eloncoin/settings/settingswidget.h \
+  qt/eloncoin/welcomecontentwidget.h \
+  qt/eloncoin/splash.h
+
+RES_ICONS = \
+  qt/res/icons/bitcoin.ico \
+  qt/res/icons/bitcoin.png \
+  qt/res/icons/bitcoin_testnet.ico \
+  qt/res/icons/bitcoin_testnet.png \
+  qt/res/icons/bitcoin_regtest.png \
+  qt/res/icons/lock_closed.png \
+  qt/res/icons/lock_open.png \
+  qt/res/icons/overview.png \
+  qt/res/icons/ic-transaction-received.svg \
+  qt/res/icons/ic-transaction-mint.svg \
+  qt/res/icons/ic-transaction-sent.svg \
+  qt/res/icons/ic-transaction-staked.svg \
+  qt/eloncoin/res/img/bg-dashboard-banner.png \
+  qt/eloncoin/res/img/bg-multi-number-dark.svg \
+  qt/eloncoin/res/img/ic-check-locked.svg \
+  qt/eloncoin/res/img/ic-nav-address.svg \
+  qt/eloncoin/res/img/ic-update.svg \
+  qt/eloncoin/res/img/bg-multi-number.svg \
+  qt/eloncoin/res/img/ic-check-mint-off.svg \
+  qt/eloncoin/res/img/ic-nav-cold-staking.svg \
+  qt/eloncoin/res/img/ic-nav-cold-staking-active.svg \
+  qt/eloncoin/res/img/ic-nav-dashboard-active.svg \
+  qt/eloncoin/res/img/ic-wallet-status-locked.svg \
+  qt/eloncoin/res/img/bg-splash.svg \
+  qt/eloncoin/res/img/bg-splash.png \
+  qt/eloncoin/res/img/ic-check-mint.svg \
+  qt/eloncoin/res/img/ic-nav-dashboard-hover.svg \
+  qt/eloncoin/res/img/ic-wallet-status-staking.svg \
+  qt/eloncoin/res/img/ic-check-peers-off.svg \
+  qt/eloncoin/res/img/ic-nav-dashboard.svg \
+  qt/eloncoin/res/img/ic-wallet-status-unlocked.svg \
+  qt/eloncoin/res/img/ic-check-peers.svg \
+  qt/eloncoin/res/img/ic-nav-master-active.svg \
+  qt/eloncoin/res/img/ic-watch-password-white.svg \
+  qt/eloncoin/res/img/bg-welcome-container.jpg \
+  qt/eloncoin/res/img/bg-welcome-container.png \
+  qt/eloncoin/res/img/bg-welcome-container.svg \
+  qt/eloncoin/res/img/bg-welcome-container@2x.png \
+  qt/eloncoin/res/img/bg-welcome-container@3x.png \
+  qt/eloncoin/res/img/ic-check-staking-off.svg \
+  qt/eloncoin/res/img/ic-nav-master-hover.svg \
+  qt/eloncoin/res/img/ic-watch-password.svg \
+  qt/eloncoin/res/img/bg-welcome.jpg \
+  qt/eloncoin/res/img/bg-welcome.svg \
+  qt/eloncoin/res/img/bg-welcome@2x.jpg \
+  qt/eloncoin/res/img/bg-welcome@3x.jpg \
+  qt/eloncoin/res/img/bg-welcome.png \
+  qt/eloncoin/res/img/ic-check-staking.svg \
+  qt/eloncoin/res/img/ic-nav-master.svg \
+  qt/eloncoin/res/img/img-dashboard-banner.jpg \
+  qt/eloncoin/res/img/btn-radio-active.svg \
+  qt/eloncoin/res/img/ic-check-sync-off.svg \
+  qt/eloncoin/res/img/ic-nav-privacy-active.svg \
+  qt/eloncoin/res/img/img-empty-contacts.svg \
+  qt/eloncoin/res/img/btn-radio-off.svg \
+  qt/eloncoin/res/img/ic-check-sync.png \
+  qt/eloncoin/res/img/ic-nav-privacy-hover.svg \
+  qt/eloncoin/res/img/img-empty-dark-contacts.svg \
+  qt/eloncoin/res/img/ic-contact-arrow-down.svg \
+  qt/eloncoin/res/img/ic-contact-arrow-down-white.svg \
+  qt/eloncoin/res/img/ic-check-sync.svg \
+  qt/eloncoin/res/img/ic-check-faq.svg \
+  qt/eloncoin/res/img/ic-nav-privacy.svg \
+  qt/eloncoin/res/img/img-empty-dark-error.svg \
+  qt/eloncoin/res/img/ic-add-label.svg \
+  qt/eloncoin/res/img/ic-pending.svg \
+  qt/eloncoin/res/img/ic-check-theme-dark.svg \
+  qt/eloncoin/res/img/ic-nav-receive-active.svg \
+  qt/eloncoin/res/img/img-empty-dark-masternode.svg \
+  qt/eloncoin/res/img/ic-add-liliac.svg \
+  qt/eloncoin/res/img/ic-check-theme-light.svg \
+  qt/eloncoin/res/img/ic-nav-receive-hover.svg \
+  qt/eloncoin/res/img/img-empty-dark-multisend.svg \
+  qt/eloncoin/res/img/ic-add-purple.svg \
+  qt/eloncoin/res/img/ic-check-white.svg \
+  qt/eloncoin/res/img/ic-nav-receive.svg \
+  qt/eloncoin/res/img/img-empty-dark-peers.svg \
+  qt/eloncoin/res/img/ic-add.svg \
+  qt/eloncoin/res/img/ic-check.svg \
+  qt/eloncoin/res/img/ic-nav-send-active.svg \
+  qt/eloncoin/res/img/img-empty-dark-staking-off.svg \
+  qt/eloncoin/res/img/img-empty-dark-staking-on.svg \
+  qt/eloncoin/res/img/ic-address-book-grey.svg \
+  qt/eloncoin/res/img/ic-chevron-left.svg \
+  qt/eloncoin/res/img/ic-nav-send-hover.svg \
+  qt/eloncoin/res/img/img-empty-dark-transactions.svg \
+  qt/eloncoin/res/img/ic-address-book-white.svg \
+  qt/eloncoin/res/img/ic-chevron-right.svg \
+  qt/eloncoin/res/img/ic-chevron-right-liliac.svg \
+  qt/eloncoin/res/img/ic-nav-send.svg \
+  qt/eloncoin/res/img/img-empty-error.svg \
+  qt/eloncoin/res/img/ic-address-book.svg \
+  qt/eloncoin/res/img/ic-clear-liliac.svg \
+  qt/eloncoin/res/img/ic-nav-settings-active.svg \
+  qt/eloncoin/res/img/img-empty-masternode.svg \
+  qt/eloncoin/res/img/ic-address-send-white.svg \
+  qt/eloncoin/res/img/ic-clear-purple.svg \
+  qt/eloncoin/res/img/ic-nav-settings-hover.svg \
+  qt/eloncoin/res/img/img-empty-multisend.svg \
+  qt/eloncoin/res/img/ic-address-send.svg \
+  qt/eloncoin/res/img/ic-close-white.svg \
+  qt/eloncoin/res/img/ic-nav-settings.svg \
+  qt/eloncoin/res/img/img-empty-peers.svg \
+  qt/eloncoin/res/img/img-empty-privacy.svg \
+  qt/eloncoin/res/img/img-empty-privacy-dark.svg \
+  qt/eloncoin/res/img/ic-arrow-drop-down-white.svg \
+  qt/eloncoin/res/img/ic-close.svg \
+  qt/eloncoin/res/img/ic-radio-liliac-on.svg \
+  qt/eloncoin/res/img/img-empty-staking-off.svg \
+  qt/eloncoin/res/img/ic-arrow-drop-down.svg \
+  qt/eloncoin/res/img/ic-coin-emc.svg \
+  qt/eloncoin/res/img/ic-receive-off.svg \
+  qt/eloncoin/res/img/img-empty-staking-on.svg \
+  qt/eloncoin/res/img/ic-arrow-drop-up-white.svg \
+  qt/eloncoin/res/img/ic-coin-zemc.png \
+  qt/eloncoin/res/img/ic-receive-on.svg \
+  qt/eloncoin/res/img/img-empty-transactions.svg \
+  qt/eloncoin/res/img/ic-arrow-drop-up.svg \
+  qt/eloncoin/res/img/ic-coin-zemc.svg \
+  qt/eloncoin/res/img/ic-received.svg \
+  qt/eloncoin/res/img/img-logo-eloncoin.png \
+  qt/eloncoin/res/img/ic-arrow-drop-white-down.svg \
+  qt/eloncoin/res/img/ic-combo-box.svg \
+  qt/eloncoin/res/img/ic-send.svg \
+  qt/eloncoin/res/img/img-logo-eloncoin@2x.png \
+  qt/eloncoin/res/img/ic-arrow-purple-down.svg \
+  qt/eloncoin/res/img/ic-connect.svg \
+  qt/eloncoin/res/img/ic-submenu-lock.svg \
+  qt/eloncoin/res/img/img-logo-eloncoin@3x.png \
+  qt/eloncoin/res/img/img-logo-eloncoin.svg \
+  qt/eloncoin/res/img/ic-arrow-right-white.svg \
+  qt/eloncoin/res/img/ic-arrow-left-white.svg \
+  qt/eloncoin/res/img/ic-arrow-left.svg \
+  qt/eloncoin/res/img/ic-copy-liliac.svg \
+  qt/eloncoin/res/img/ic-submenu-staking.svg \
+  qt/eloncoin/res/img/img-nav-logo-eloncoin.png \
+  qt/eloncoin/res/img/ic-arrow-right.svg \
+  qt/eloncoin/res/img/ic-copy.svg \
+  qt/eloncoin/res/img/ic-copy-big.svg \
+  qt/eloncoin/res/img/ic-copy-big-white.svg \
+  qt/eloncoin/res/img/ic-submenu-unlock.svg \
+  qt/eloncoin/res/img/img-nav-logo.png \
+  qt/eloncoin/res/img/ic-arrow-white-left.svg \
+  qt/eloncoin/res/img/ic-exit.svg \
+  qt/eloncoin/res/img/ic-switch-liliac-on.svg \
+  qt/eloncoin/res/img/img-nav-logo.svg \
+  qt/eloncoin/res/img/ic-arrow-white-right.svg \
+  qt/eloncoin/res/img/ic-expand.svg \
+  qt/eloncoin/res/img/ic-switch-off.svg \
+  qt/eloncoin/res/img/img-qr-test-big.png \
+  qt/eloncoin/res/img/ic-check-active.svg \
+  qt/eloncoin/res/img/ic-folder.svg \
+  qt/eloncoin/res/img/ic-switch-on.svg \
+  qt/eloncoin/res/img/img-qr-test.png \
+  qt/eloncoin/res/img/ic-check-box.svg \
+  qt/eloncoin/res/img/ic-check-box-dark-active.svg \
+  qt/eloncoin/res/img/ic-check-box-indeterminate.svg \
+  qt/eloncoin/res/img/ic-check-box-liliac-indeterminate.svg \
+  qt/eloncoin/res/img/ic-label-liliac.svg \
+  qt/eloncoin/res/img/ic-transaction-warning.svg \
+  qt/eloncoin/res/img/ic-transaction-mint.svg \
+  qt/eloncoin/res/img/ic-transaction-mint-inactive.svg \
+  qt/eloncoin/res/img/ic-check-cold-staking.svg \
+  qt/eloncoin/res/img/ic-check-cold-staking-off.svg \
+  qt/eloncoin/res/img/ic-check-cold-staking-enabled.svg \
+  qt/eloncoin/res/img/dark/ic-transaction-cs-contract.svg \
+  qt/eloncoin/res/img/dark/ic-transaction-cs-contract-inactive.svg \
+  qt/eloncoin/res/img/img-qr.svg \
+  qt/eloncoin/res/img/ic-check-connect-off.svg \
+  qt/eloncoin/res/img/ic-check-tor-off.svg \
+  qt/eloncoin/res/img/ic-check-tor.svg \
+  qt/eloncoin/res/img/ic-label.svg \
+  qt/eloncoin/res/img/ic-transaction-received.svg \
+  qt/eloncoin/res/img/dark/ic-transaction-received.svg \
+  qt/eloncoin/res/img/dark/ic-transaction-warning.svg \
+  qt/eloncoin/res/img/dark/ic-transaction-mint.svg \
+  qt/eloncoin/res/img/dark/ic-transaction-mint-inactive.svg \
+  qt/eloncoin/res/img/ic-transaction-received-inactive.svg \
+  qt/eloncoin/res/img/dark/ic-transaction-received-inactive.svg \
+  qt/eloncoin/res/img/img-welcome-step1.png \
+  qt/eloncoin/res/img/ic-check-connect.svg \
+  qt/eloncoin/res/img/ic-menu-hover.svg \
+  qt/eloncoin/res/img/ic-transaction-sent.svg \
+  qt/eloncoin/res/img/ic-transaction-sent-inactive.svg \
+  qt/eloncoin/res/img/dark/ic-transaction-sent.svg \
+  qt/eloncoin/res/img/dark/ic-transaction-sent-inactive.svg \
+  qt/eloncoin/res/img/img-welcome-step2.png \
+  qt/eloncoin/res/img/ic-check-dark.svg \
+  qt/eloncoin/res/img/ic-mint.svg \
+  qt/eloncoin/res/img/ic-transaction-staked.svg \
+  qt/eloncoin/res/img/ic-transaction-staked-inactive.svg \
+  qt/eloncoin/res/img/dark/ic-transaction-staked.svg \
+  qt/eloncoin/res/img/dark/ic-transaction-staked-inactive.svg \
+  qt/eloncoin/res/img/img-welcome-step3.png \
+  qt/eloncoin/res/img/ic-check-liliac-on.svg \
+  qt/eloncoin/res/img/ic-nav-address-active.svg \
+  qt/eloncoin/res/img/ic-unlock-staking.svg \
+  qt/eloncoin/res/img/img-welcome-step4.png \
+  qt/eloncoin/res/img/ic-check-locked-off.svg \
+  qt/eloncoin/res/img/ic-nav-address-hover.svg \
+  qt/eloncoin/res/img/ic-update-liliac.svg \
+  qt/eloncoin/res/img/ic-arrow-drop-down-purple.svg \
+  qt/eloncoin/res/img/ic-arrow-drop-up-purple.svg \
+  qt/eloncoin/res/img/ic-check-liliac-indeterminate.svg \
+  qt/eloncoin/res/img/ic-check-box-liliac-indeterminate.svg \
+  qt/eloncoin/res/img/ic-transaction-stake-delegated.svg \
+  qt/eloncoin/res/img/ic-transaction-stake-delegated-inactive.svg \
+  qt/eloncoin/res/img/ic-transaction-stake-hot.svg \
+  qt/eloncoin/res/img/ic-transaction-stake-hot-inactive.svg \
+  qt/eloncoin/res/img/dark/ic-transaction-stake-hot.svg \
+  qt/eloncoin/res/img/dark/ic-transaction-stake-hot-inactive.svg \
+  qt/eloncoin/res/img/dark/ic-transaction-stake-delegated.svg \
+  qt/eloncoin/res/img/dark/ic-transaction-stake-delegated-inactive.svg \
+  qt/eloncoin/res/img/ic-transaction-cs-contract.svg \
+  qt/eloncoin/res/img/ic-transaction-cs-contract-inactive.svg \
+  qt/eloncoin/res/img/ic-check-box-indeterminate.svg \
+  qt/eloncoin/res/img/ic-information.svg \
+  qt/eloncoin/res/img/ic-information-hover.svg \
+  qt/eloncoin/res/img/ani-loading-dark.gif \
+  qt/eloncoin/res/img/ani-loading.gif
+
+BITCOIN_QT_BASE_CPP = \
+  qt/bantablemodel.cpp \
+  qt/bitcoinaddressvalidator.cpp \
+  qt/eloncoin/eloncoingui.cpp \
+  qt/bitcoinunits.cpp \
+  qt/clientmodel.cpp \
+  qt/csvmodelwriter.cpp \
+  qt/guiutil.cpp \
+  qt/intro.cpp \
+  qt/networkstyle.cpp \
+  qt/notificator.cpp \
+  qt/optionsdialog.cpp \
+  qt/optionsmodel.cpp \
+  qt/peertablemodel.cpp \
+  qt/platformstyle.cpp \
+  qt/qvalidatedlineedit.cpp \
+  qt/qvaluecombobox.cpp \
+  qt/rpcconsole.cpp \
+  qt/trafficgraphwidget.cpp \
+  qt/utilitydialog.cpp
+
+BITCOIN_QT_WINDOWS_CPP = qt/winshutdownmonitor.cpp
+
+BITCOIN_QT_WALLET_CPP = \
+  qt/addressbookpage.cpp \
+  qt/addresstablemodel.cpp \
+  qt/askpassphrasedialog.cpp \
+  qt/coincontroldialog.cpp \
+  qt/coincontroltreewidget.cpp \
+  qt/editaddressdialog.cpp \
+  qt/openuridialog.cpp \
+  qt/paymentrequestplus.cpp \
+  qt/paymentserver.cpp \
+  qt/recentrequeststablemodel.cpp \
+  qt/transactionfilterproxy.cpp \
+  qt/transactionrecord.cpp \
+  qt/transactiontablemodel.cpp \
+  qt/walletmodel.cpp \
+  qt/walletmodeltransaction.cpp \
+  qt/eloncoin/loadingdialog.cpp \
+  qt/eloncoin/pwidget.cpp \
+  qt/eloncoin/focuseddialog.cpp \
+  qt/eloncoin/guitransactionsutils.cpp \
+  qt/eloncoin/snackbar.cpp \
+  qt/eloncoin/navmenuwidget.cpp \
+  qt/eloncoin/lockunlock.cpp \
+  qt/eloncoin/receivedialog.cpp \
+  qt/eloncoin/furabstractlistitemdelegate.cpp \
+  qt/eloncoin/txviewholder.cpp \
+  qt/eloncoin/qtutils.cpp \
+  qt/eloncoin/expandablebutton.cpp \
+  qt/eloncoin/balancebubble.cpp \
+  qt/eloncoin/topbar.cpp \
+  qt/eloncoin/txrow.cpp \
+  qt/eloncoin/addressholder.cpp \
+  qt/eloncoin/addressfilterproxymodel.cpp \
+  qt/eloncoin/dashboardwidget.cpp \
+  qt/eloncoin/addresslabelrow.cpp \
+  qt/eloncoin/contactdropdownrow.cpp \
+  qt/eloncoin/contactsdropdown.cpp \
+  qt/eloncoin/optionbutton.cpp \
+  qt/eloncoin/mninfodialog.cpp \
+  qt/eloncoin/coldstakingmodel.cpp \
+  qt/eloncoin/mnmodel.cpp \
+  qt/eloncoin/masternodewizarddialog.cpp \
+  qt/eloncoin/mnrow.cpp \
+  qt/eloncoin/masternodeswidget.cpp \
+  qt/eloncoin/myaddressrow.cpp \
+  qt/eloncoin/csrow.cpp \
+  qt/eloncoin/sendchangeaddressdialog.cpp \
+  qt/eloncoin/sendconfirmdialog.cpp \
+  qt/eloncoin/sendcustomfeedialog.cpp \
+  qt/eloncoin/sendmemodialog.cpp \
+  qt/eloncoin/sendmultirow.cpp \
+  qt/eloncoin/send.cpp \
+  qt/eloncoin/addnewaddressdialog.cpp \
+  qt/eloncoin/addnewcontactdialog.cpp \
+  qt/eloncoin/requestdialog.cpp \
+  qt/eloncoin/receivewidget.cpp \
+  qt/eloncoin/tooltipmenu.cpp \
+  qt/eloncoin/addresseswidget.cpp \
+  qt/eloncoin/defaultdialog.cpp \
+  qt/eloncoin/coldstakingwidget.cpp \
+  qt/eloncoin/settings/settingsbackupwallet.cpp \
+  qt/eloncoin/settings/settingsexportcsv.cpp \
+  qt/eloncoin/settings/settingsbittoolwidget.cpp \
+  qt/eloncoin/settings/settingsconsolewidget.cpp \
+  qt/eloncoin/settings/settingsdisplayoptionswidget.cpp \
+  qt/eloncoin/settings/settingsfaqwidget.cpp \
+  qt/eloncoin/settings/settingsinformationwidget.cpp \
+  qt/eloncoin/settings/settingsmainoptionswidget.cpp \
+  qt/eloncoin/settings/settingsmultisenddialog.cpp \
+  qt/eloncoin/settings/settingsmultisendwidget.cpp \
+  qt/eloncoin/settings/settingssignmessagewidgets.cpp \
+  qt/eloncoin/settings/settingswalletoptionswidget.cpp \
+  qt/eloncoin/settings/settingswalletrepairwidget.cpp \
+  qt/eloncoin/settings/settingswidget.cpp \
+  qt/eloncoin/welcomecontentwidget.cpp \
+  qt/eloncoin/splash.cpp
+
+
+BITCOIN_QT_CPP = $(BITCOIN_QT_BASE_CPP)
+if TARGET_WINDOWS
+BITCOIN_QT_CPP += $(BITCOIN_QT_WINDOWS_CPP)
+endif
+if ENABLE_WALLET
+BITCOIN_QT_CPP += $(BITCOIN_QT_WALLET_CPP)
+endif
+
+RES_IMAGES = \
+  qt/res/images/about.png \
+  qt/res/images/splash.png \
+  qt/res/images/splash_testnet.png \
+  qt/res/images/splash_regtest.png
+
+RES_CSS = \
+  qt/res/css/default.css \
+  qt/eloncoin/res/css/style_dark.css \
+  qt/eloncoin/res/css/style_light.css
+
+BITCOIN_RC = qt/res/eloncoin-qt-res.rc
+
+BITCOIN_QT_INCLUDES = -I$(builddir)/qt -I$(srcdir)/qt -I$(srcdir)/qt/forms \
+  -I$(builddir)/qt/forms -DQT_NO_KEYWORDS
+
+qt_libbitcoinqt_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
+  $(QT_INCLUDES) $(QT_DBUS_INCLUDES) $(PROTOBUF_CFLAGS) $(QR_CFLAGS) $(SVG_CFLAGS) $(CHARTS_CFLAGS)
+qt_libbitcoinqt_a_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
+qt_libbitcoinqt_a_OBJCXXFLAGS = $(AM_OBJCXXFLAGS) $(QT_PIE_FLAGS)
+
+qt_libbitcoinqt_a_SOURCES = $(BITCOIN_QT_CPP) $(BITCOIN_QT_H) $(QT_FORMS_UI) \
+  $(QT_QRC) $(QT_QRC_LOCALE) $(QT_TS) $(PROTOBUF_PROTO) $(RES_ICONS) $(RES_IMAGES) $(RES_CSS)
+
+nodist_qt_libbitcoinqt_a_SOURCES = $(QT_MOC_CPP) $(QT_MOC) $(PROTOBUF_CC) \
+  $(PROTOBUF_H) $(QT_QRC_CPP) $(QT_QRC_LOCALE_CPP)
+
+# forms/foo.h -> forms/ui_foo.h
+QT_FORMS_H=$(join $(dir $(QT_FORMS_UI)),$(addprefix ui_, $(notdir $(QT_FORMS_UI:.ui=.h))))
+
+# Most files will depend on the forms and moc files as includes. Generate them
+# before anything else.
+$(QT_MOC): $(QT_FORMS_H)
+$(qt_libbitcoinqt_a_OBJECTS) $(qt_eloncoin_qt_OBJECTS) : | $(QT_MOC)
+
+#Generating these with a half-written protobuf header leads to wacky results.
+#This makes sure it's done.
+$(QT_MOC): $(PROTOBUF_H)
+$(QT_MOC_CPP): $(PROTOBUF_H)
+
+# eloncoin-qt binary #
+qt_eloncoin_qt_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
+  $(QT_INCLUDES) $(PROTOBUF_CFLAGS) $(QR_CFLAGS) $(SVG_CFLAGS) $(CHARTS_CFLAGS)
+qt_eloncoin_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
+
+qt_eloncoin_qt_SOURCES = qt/eloncoin.cpp
+if TARGET_DARWIN
+  qt_eloncoin_qt_SOURCES += $(BITCOIN_MM)
+endif
+if TARGET_WINDOWS
+  qt_eloncoin_qt_SOURCES += $(BITCOIN_RC)
+endif
+qt_eloncoin_qt_LDADD = qt/libbitcoinqt.a $(LIBBITCOIN_SERVER)
+if ENABLE_WALLET
+qt_eloncoin_qt_LDADD += $(LIBBITCOIN_UTIL) $(LIBBITCOIN_WALLET)
+endif
+if ENABLE_ZMQ
+qt_eloncoin_qt_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
+endif
+qt_eloncoin_qt_LDADD += $(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) $(LIBUNIVALUE) $(LIBBITCOIN_ZEROCOIN) $(LIBSAPLING) $(LIBRUSTZCASH) $(LIBZCASH_LIBS) $(LIBLEVELDB) $(LIBLEVELDB_SSE42) $(LIBMEMENV) \
+  $(BOOST_LIBS) $(QT_LIBS) $(QT_DBUS_LIBS) $(QR_LIBS) $(PROTOBUF_LIBS) $(SVG_LIBS) $(CHARTS_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(LIBSECP256K1) \
+  $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
+qt_eloncoin_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+qt_eloncoin_qt_LIBTOOLFLAGS = $(AM_LIBTOOLFLAGS) --tag CXX
+
+#locale/foo.ts -> locale/foo.qm
+QT_QM=$(QT_TS:.ts=.qm)
+
+SECONDARY: $(QT_QM)
+
+$(srcdir)/qt/eloncoinstrings.cpp: $(libbitcoin_server_a_SOURCES) $(libbitcoin_wallet_a_SOURCES) $(libbitcoin_common_a_SOURCES) $(libbitcoin_zmq_a_SOURCES) $(libbitcoin_util_a_SOURCES)
+	@test -n $(XGETTEXT) || echo "xgettext is required for updating translations"
+	$(AM_V_GEN) cd $(srcdir); XGETTEXT=$(XGETTEXT) PACKAGE_NAME="$(PACKAGE_NAME)" $(PYTHON) ../share/qt/extract_strings_qt.py $^
+
+translate: $(srcdir)/qt/eloncoinstrings.cpp $(QT_FORMS_UI) $(QT_FORMS_UI) $(BITCOIN_QT_BASE_CPP) qt/eloncoin.cpp $(BITCOIN_QT_WINDOWS_CPP) $(BITCOIN_QT_WALLET_CPP) $(BITCOIN_QT_H) $(BITCOIN_MM)
+	@test -n $(LUPDATE) || echo "lupdate is required for updating translations"
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(LUPDATE) $^ -locations relative -no-obsolete -ts $(srcdir)/qt/locale/eloncoin_en.ts
+
+$(QT_QRC_LOCALE_CPP): $(QT_QRC_LOCALE) $(QT_QM)
+	@test -f $(RCC)
+	@cp -f $< $(@D)/temp_$(<F)
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name eloncoin_locale $(@D)/temp_$(<F) | \
+	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
+	@rm $(@D)/temp_$(<F)
+
+$(QT_QRC_CPP): $(QT_QRC) $(QT_FORMS_H) $(RES_ICONS) $(RES_IMAGES) $(RES_CSS) $(PROTOBUF_H)
+	@test -f $(RCC)
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name eloncoin $< | \
+	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
+
+CLEAN_QT = $(nodist_qt_libbitcoinqt_a_SOURCES) $(QT_QM) $(QT_FORMS_H) qt/*.gcda qt/*.gcno qt/eloncoin/*.gcda qt/eloncoin/*.gcno qt/eloncoin/settings/*.gcda qt/eloncoin/settings/*.gcno qt/temp_eloncoin_locale.qrc
+
+CLEANFILES += $(CLEAN_QT)
+
+eloncoin_qt_clean: FORCE
+	rm -f $(CLEAN_QT) $(qt_libbitcoinqt_a_OBJECTS) $(qt_eloncoin_qt_OBJECTS) qt/eloncoin-qt$(EXEEXT) $(LIBBITCOINQT)
+
+eloncoin_qt : qt/eloncoin-qt$(EXEEXT)
+
+ui_%.h: %.ui
+	@test -f $(UIC)
+	@$(MKDIR_P) $(@D)
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(UIC) -o $@ $< || (echo "Error creating $@"; false)
+
+%.moc: %.cpp
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(MOC) $(DEFAULT_INCLUDES) $(QT_INCLUDES) $(MOC_DEFS) $< | \
+	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
+
+moc_%.cpp: %.h
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(MOC) $(DEFAULT_INCLUDES) $(QT_INCLUDES) $(MOC_DEFS) $< | \
+	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
+
+%.qm: %.ts
+	@test -f $(LRELEASE)
+	@$(MKDIR_P) $(@D)
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(LRELEASE) -silent $< -qm $@
