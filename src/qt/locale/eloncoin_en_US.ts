@@ -4036,14 +4036,14 @@ There was an error trying to save the address list to %1. Please try again.</tra
         <source>
                            &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
                            We have support channels in most of our official chat groups, for example
-                           &lt;a style='color: #b088ff' href='https://discord.ELONCOIN.org'&gt;
+                           &lt;a style='color: #ffaf88' href='https://discord.ELONCOIN.org'&gt;
                            #support in our Discord&lt;/a&gt;.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                          </source>
         <translation>
                            &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
                            We have support channels in most of our official chat groups, for example
-                           &lt;a style='color: #b088ff' href='https://discord.ELONCOIN.org'&gt;
+                           &lt;a style='color: #ffaf88' href='https://discord.ELONCOIN.org'&gt;
                            #support in our Discord&lt;/a&gt;.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                          </translation>
@@ -5006,8 +5006,8 @@ Are you sure?
         <translation>Form</translation>
     </message>
     <message>
-        <source>Loading???</source>
-        <translation>Loading???</translation>
+        <source>Loading…</source>
+        <translation>Loading…</translation>
     </message>
     <message>
         <source>ELONCOIN Core</source>
@@ -5480,8 +5480,8 @@ backup will be created.
         <translation>Output Index</translation>
     </message>
     <message>
-        <source>D7VFR83SQbie???BhjcWJtcfip5krte2Z </source>
-        <translation>D7VFR83SQbie???BhjcWJtcfip5krte2Z </translation>
+        <source>D7VFR83SQbie…BhjcWJtcfip5krte2Z </source>
+        <translation>D7VFR83SQbie…BhjcWJtcfip5krte2Z </translation>
     </message>
     <message>
         <source>May 25, 2017</source>
@@ -5659,8 +5659,8 @@ ELONCOIN Core Wallet</source>
 ELONCOIN Core Wallet</translation>
     </message>
     <message>
-        <source>ELONCOIN is the world???s most innovative Proof of Stake blockchain based technology. Developed by a team of highly experienced developers and cryptographers.</source>
-        <translation>ELONCOIN is the world???s most innovative Proof of Stake blockchain based technology. Developed by a team of highly experienced developers and cryptographers.</translation>
+        <source>ELONCOIN is the world’s most innovative Proof of Stake blockchain based technology. Developed by a team of highly experienced developers and cryptographers.</source>
+        <translation>ELONCOIN is the world’s most innovative Proof of Stake blockchain based technology. Developed by a team of highly experienced developers and cryptographers.</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;As our manifesto says: Privacy is a non-negotiable basic human right; it grants users the freedom to share their data whenever and with whomever they want - ELONCOIN believes in self sovereignty.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>

@@ -343,7 +343,7 @@
                  </layout>
                 </widget>
                </item>
-               <item>
+               <!-- <item>
                 <widget class="QLabel" name="labelLine2">
                  <property name="minimumSize">
                   <size>
@@ -364,8 +364,8 @@
                   <string/>
                  </property>
                 </widget>
-               </item>
-               <item>
+               </item> -->
+               <!-- <item>
                 <widget class="QWidget" name="layoutIcon3_2" native="true">
                  <property name="minimumSize">
                   <size>
@@ -514,7 +514,7 @@
                   </item>
                  </layout>
                 </widget>
-               </item>
+               </item> -->
                <item>
                 <spacer name="horizontalSpacer_8">
                  <property name="orientation">
@@ -667,7 +667,7 @@
                     </property>
                    </widget>
                   </item>
-                  <item>
+                  <!-- <item>
                    <spacer name="horizontalSpacer_3">
                     <property name="orientation">
                      <enum>Qt::Horizontal</enum>
@@ -679,8 +679,8 @@
                      </size>
                     </property>
                    </spacer>
-                  </item>
-                  <item>
+                  </item> -->
+                  <!-- <item>
                    <widget class="QPushButton" name="pushName3">
                     <property name="minimumSize">
                      <size>
@@ -748,7 +748,7 @@
                      <bool>false</bool>
                     </property>
                    </widget>
-                  </item>
+                  </item> -->
                   <item>
                    <spacer name="horizontalSpacer_6">
                     <property name="orientation">
@@ -963,7 +963,7 @@ ELONCOIN Core Wallet</string>
                    <item alignment="Qt::AlignHCenter">
                     <widget class="QLabel" name="labelMessage2">
                      <property name="text">
-                      <string>ELONCOIN is the world???s most innovative Proof of Stake blockchain based technology. Developed by a team of highly experienced developers and cryptographers.</string>
+                      <string>ELONCOIN is the world’s most innovative Proof of Stake blockchain based technology. Developed by a team of highly experienced developers and cryptographers.</string>
                      </property>
                      <property name="alignment">
                       <set>Qt::AlignHCenter|Qt::AlignTop</set>
@@ -991,7 +991,7 @@ ELONCOIN Core Wallet</string>
                 </item>
                </layout>
               </widget>
-              <widget class="QWidget" name="page_3">
+              <!-- <widget class="QWidget" name="page_3">
                <layout class="QVBoxLayout" name="verticalLayout_8" stretch="0,0,0,3">
                 <property name="spacing">
                  <number>6</number>
@@ -1163,7 +1163,7 @@ ELONCOIN Core Wallet</string>
                  </spacer>
                 </item>
                </layout>
-              </widget>
+              </widget> -->
              </widget>
             </item>
            </layout>

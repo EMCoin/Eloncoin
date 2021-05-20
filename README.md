@@ -2,8 +2,8 @@ ELONCOIN Core integration/staging repository
 =====================================
 
 [![master Actions Status](https://github.com/ELONCOIN-Project/ELONCOIN/workflows/CI%20Actions%20for%20ELONCOIN/badge.svg)](https://github.com/ELONCOIN-Project/ELONCOIN/actions)
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/ELONCOIN-Project/eloncoin?color=%235c4b7d&cacheSeconds=3600)](https://github.com/ELONCOIN-Project/ELONCOIN/releases)
-[![GitHub Release Date](https://img.shields.io/github/release-date/ELONCOIN-Project/eloncoin?color=%235c4b7d&cacheSeconds=3600)](https://github.com/ELONCOIN-Project/ELONCOIN/releases)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/ELONCOIN-Project/eloncoin?color=%237d594b&cacheSeconds=3600)](https://github.com/ELONCOIN-Project/ELONCOIN/releases)
+[![GitHub Release Date](https://img.shields.io/github/release-date/ELONCOIN-Project/eloncoin?color=%237d594b&cacheSeconds=3600)](https://github.com/ELONCOIN-Project/ELONCOIN/releases)
 
 ## What is ELONCOIN?
 

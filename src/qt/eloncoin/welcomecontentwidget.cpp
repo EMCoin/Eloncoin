@@ -60,17 +60,17 @@ WelcomeContentWidget::WelcomeContentWidget(QWidget *parent) :
 
     // position
     backButton->move(backX, backY);
-    backButton->setStyleSheet("background: url(://ic-arrow-white-left); background-repeat:no-repeat;background-position:center;border:  0;background-color:#5c4b7d;color: #5c4b7d; border-radius:2px;");
+    backButton->setStyleSheet("background: url(://ic-arrow-white-left); background-repeat:no-repeat;background-position:center;border:  0;background-color:#7d594b;color: #7d594b; border-radius:2px;");
     nextButton->move(nextX, nextY);
-    nextButton->setStyleSheet("background: url(://ic-arrow-white-right);background-repeat:no-repeat;background-position:center;border:  0;background-color:#5c4b7d;color: #5c4b7d; border-radius:2px;");
+    nextButton->setStyleSheet("background: url(://ic-arrow-white-right);background-repeat:no-repeat;background-position:center;border:  0;background-color:#7d594b;color: #7d594b; border-radius:2px;");
 
     if (pos == 0) {
         backButton->setVisible(false);
     }
 
     ui->labelLine1->setProperty("cssClass", "line-welcome");
-    ui->labelLine2->setProperty("cssClass", "line-welcome");
-    ui->labelLine3->setProperty("cssClass", "line-welcome");
+    // ui->labelLine2->setProperty("cssClass", "line-welcome");
+    // ui->labelLine3->setProperty("cssClass", "line-welcome");
 
     ui->groupBoxName->setProperty("cssClass", "container-welcome-box");
     ui->groupContainer->setProperty("cssClass", "container-welcome-box");
@@ -79,19 +79,19 @@ WelcomeContentWidget::WelcomeContentWidget(QWidget *parent) :
     ui->pushNumber1->setEnabled(false);
     ui->pushNumber2->setProperty("cssClass", "btn-welcome-number-check");
     ui->pushNumber2->setEnabled(false);
-    ui->pushNumber3->setProperty("cssClass", "btn-welcome-number-check");
-    ui->pushNumber3->setEnabled(false);
-    ui->pushNumber4->setProperty("cssClass", "btn-welcome-number-check");
-    ui->pushNumber4->setEnabled(false);
+    // ui->pushNumber3->setProperty("cssClass", "btn-welcome-number-check");
+    // ui->pushNumber3->setEnabled(false);
+    // ui->pushNumber4->setProperty("cssClass", "btn-welcome-number-check");
+    // ui->pushNumber4->setEnabled(false);
 
     ui->pushName1->setProperty("cssClass", "btn-welcome-name-check");
     ui->pushName1->setEnabled(false);
     ui->pushName2->setProperty("cssClass", "btn-welcome-name-check");
     ui->pushName2->setEnabled(false);
-    ui->pushName3->setProperty("cssClass", "btn-welcome-name-check");
-    ui->pushName3->setEnabled(false);
-    ui->pushName4->setProperty("cssClass", "btn-welcome-name-check");
-    ui->pushName4->setEnabled(false);
+    // ui->pushName3->setProperty("cssClass", "btn-welcome-name-check");
+    // ui->pushName3->setEnabled(false);
+    // ui->pushName4->setProperty("cssClass", "btn-welcome-name-check");
+    // ui->pushName4->setEnabled(false);
 
     ui->stackedWidget->setCurrentIndex(0);
 
@@ -106,21 +106,21 @@ WelcomeContentWidget::WelcomeContentWidget(QWidget *parent) :
     ui->labelTitle2->setProperty("cssClass", "text-title-welcome");
     ui->labelMessage2->setProperty("cssClass", "text-main-white");
 
-    // Frame 3
-    ui->page_3->setProperty("cssClass", "container-welcome-step3");
-    ui->labelTitle3->setProperty("cssClass", "text-title-welcome");
-    ui->labelMessage3->setProperty("cssClass", "text-main-white");
+    // // Frame 3
+    // ui->page_3->setProperty("cssClass", "container-welcome-step3");
+    // ui->labelTitle3->setProperty("cssClass", "text-title-welcome");
+    // ui->labelMessage3->setProperty("cssClass", "text-main-white");
 
-    // Frame 4
-    ui->page_4->setProperty("cssClass", "container-welcome-step4");
-    ui->labelTitle4->setProperty("cssClass", "text-title-welcome");
-    ui->labelMessage4->setProperty("cssClass", "text-main-white");
+    // // Frame 4
+    // ui->page_4->setProperty("cssClass", "container-welcome-step4");
+    // ui->labelTitle4->setProperty("cssClass", "text-title-welcome");
+    // ui->labelMessage4->setProperty("cssClass", "text-main-white");
 
     // Confirm icons
     icConfirm1 = new QPushButton(ui->layoutIcon1_2);
     icConfirm2 = new QPushButton(ui->layoutIcon2_2);
-    icConfirm3 = new QPushButton(ui->layoutIcon3_2);
-    icConfirm4 = new QPushButton(ui->layoutIcon4_2);
+    // icConfirm3 = new QPushButton(ui->layoutIcon3_2);
+    // icConfirm4 = new QPushButton(ui->layoutIcon4_2);
 
     QSize BUTTON_CONFIRM_SIZE = QSize(22, 22);
     int posX = 0;
@@ -218,8 +218,8 @@ void WelcomeContentWidget::onNextClicked()
             backButton->setVisible(true);
             ui->stackedWidget->setCurrentIndex(2);
             ui->pushNumber2->setChecked(true);
-            ui->pushName4->setChecked(false);
-            ui->pushName3->setChecked(false);
+            // ui->pushName4->setChecked(false);
+            // ui->pushName3->setChecked(false);
             ui->pushName2->setChecked(true);
             ui->pushName1->setChecked(true);
             icConfirm1->setVisible(true);
@@ -227,19 +227,21 @@ void WelcomeContentWidget::onNextClicked()
         }
         case 2:{
             ui->stackedWidget->setCurrentIndex(3);
-            ui->pushNumber3->setChecked(true);
-            ui->pushName4->setChecked(false);
-            ui->pushName3->setChecked(true);
+            // ui->pushNumber3->setChecked(true);
+            // ui->pushName4->setChecked(false);
+            // ui->pushName3->setChecked(true);
             ui->pushName2->setChecked(true);
             ui->pushName1->setChecked(true);
             icConfirm2->setVisible(true);
+            isOk = true;
+            accept();
             break;
         }
         case 3:{
             ui->stackedWidget->setCurrentIndex(4);
-            ui->pushNumber4->setChecked(true);
-            ui->pushName4->setChecked(true);
-            ui->pushName3->setChecked(true);
+            // ui->pushNumber4->setChecked(true);
+            // ui->pushName4->setChecked(true);
+            // ui->pushName3->setChecked(true);
             ui->pushName2->setChecked(true);
             ui->pushName1->setChecked(true);
             icConfirm3->setVisible(true);
@@ -267,11 +269,11 @@ void WelcomeContentWidget::onBackClicked()
         case 1:{
             ui->stackedWidget->setCurrentIndex(1);
             ui->pushNumber1->setChecked(true);
-            ui->pushNumber4->setChecked(false);
-            ui->pushNumber3->setChecked(false);
+            // ui->pushNumber4->setChecked(false);
+            // ui->pushNumber3->setChecked(false);
             ui->pushNumber2->setChecked(false);
-            ui->pushName4->setChecked(false);
-            ui->pushName3->setChecked(false);
+            // ui->pushName4->setChecked(false);
+            // ui->pushName3->setChecked(false);
             ui->pushName2->setChecked(false);
             ui->pushName1->setChecked(true);
             icConfirm1->setVisible(false);
@@ -282,10 +284,10 @@ void WelcomeContentWidget::onBackClicked()
         case 2:{
             ui->stackedWidget->setCurrentIndex(2);
             ui->pushNumber2->setChecked(true);
-            ui->pushNumber4->setChecked(false);
-            ui->pushNumber3->setChecked(false);
-            ui->pushName4->setChecked(false);
-            ui->pushName3->setChecked(false);
+            // ui->pushNumber4->setChecked(false);
+            // ui->pushNumber3->setChecked(false);
+            // ui->pushName4->setChecked(false);
+            // ui->pushName3->setChecked(false);
             ui->pushName2->setChecked(true);
             ui->pushName1->setChecked(true);
             icConfirm2->setVisible(false);
@@ -293,10 +295,10 @@ void WelcomeContentWidget::onBackClicked()
         }
         case 3:{
             ui->stackedWidget->setCurrentIndex(3);
-            ui->pushNumber3->setChecked(true);
-            ui->pushNumber4->setChecked(false);
-            ui->pushName4->setChecked(false);
-            ui->pushName3->setChecked(true);
+            // ui->pushNumber3->setChecked(true);
+            // ui->pushNumber4->setChecked(false);
+            // ui->pushName4->setChecked(false);
+            // ui->pushName3->setChecked(true);
             ui->pushName2->setChecked(true);
             ui->pushName1->setChecked(true);
             icConfirm3->setVisible(false);
