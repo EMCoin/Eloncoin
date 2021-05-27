@@ -123,13 +123,13 @@
               </property>
              </widget>
             </item>
-            <item>
+            <!-- <item>
              <widget class="QLabel" name="labelTrans">
               <property name="text">
                <string>transparent</string>
               </property>
              </widget>
-            </item>
+            </item> -->
             <item>
              <spacer name="horizontalSpacer_11">
               <property name="orientation">
@@ -146,7 +146,7 @@
               </property>
              </spacer>
             </item>
-            <item alignment="Qt::AlignVCenter">
+            <!-- <item alignment="Qt::AlignVCenter">
              <widget class="QLabel" name="typeSpacerTop">
               <property name="minimumSize">
                <size>
@@ -161,9 +161,7 @@
                </size>
               </property>
               <property name="styleSheet">
-               <string notr="true">background-color:white;
-padding:0px;
-border:none;</string>
+               <string notr="true">background-color:white;padding:0px;border:none;</string>
               </property>
               <property name="text">
                <string/>
@@ -205,7 +203,7 @@ border:none;</string>
                <string>shielded</string>
               </property>
              </widget>
-            </item>
+            </item> -->
            </layout>
           </widget>
          </item>
@@ -419,7 +417,7 @@ border:none;</string>
                  </property>
                 </widget>
                </item>
-               <item>
+               <!-- <item>
                 <widget class="QPushButton" name="pushButtonBalanceInfo">
                  <property name="minimumSize">
                   <size>
@@ -452,7 +450,7 @@ border:none;</string>
                   <string notr="true"/>
                  </property>
                 </widget>
-               </item>
+               </item> -->
                <item>
                 <spacer name="horizontalSpacer_4">
                  <property name="orientation">

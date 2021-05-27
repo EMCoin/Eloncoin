@@ -29,18 +29,18 @@ SettingsFaqWidget::SettingsFaqWidget(ELONCOINGUI *parent) :
            ui->labelNumber_Intro,
            ui->labelNumber_UnspendableEMC,
            ui->labelNumber_Stake,
-           ui->labelNumber_Support,
-           ui->labelNumber_Masternode,
-           ui->labelNumber_MNController
+           ui->labelNumber_Support
+        //    ui->labelNumber_Masternode,
+        //    ui->labelNumber_MNController
         }, "container-number-faq");
 
     setCssProperty({
               ui->labelSubtitle_Intro,
               ui->labelSubtitle_UnspendableEMC,
               ui->labelSubtitle_Stake,
-              ui->labelSubtitle_Support,
-              ui->labelSubtitle_Masternode,
-              ui->labelSubtitle_MNController
+              ui->labelSubtitle_Support
+            //   ui->labelSubtitle_Masternode,
+            //   ui->labelSubtitle_MNController
             }, "text-subtitle-faq");
 
 
@@ -48,9 +48,9 @@ SettingsFaqWidget::SettingsFaqWidget(ELONCOINGUI *parent) :
               ui->labelContent_Intro,
               ui->labelContent_UnspendableEMC,
               ui->labelContent_Stake,
-              ui->labelContent_Support,
-              ui->labelContent_Masternode,
-              ui->labelContent_MNController
+              ui->labelContent_Support
+            //   ui->labelContent_Masternode,
+            //   ui->labelContent_MNController
             }, "text-content-faq");
 
 
@@ -58,9 +58,9 @@ SettingsFaqWidget::SettingsFaqWidget(ELONCOINGUI *parent) :
               ui->pushButton_Intro,
               ui->pushButton_UnspendableEMC,
               ui->pushButton_Stake,
-              ui->pushButton_Support,
-              ui->pushButton_Masternode,
-              ui->pushButton_MNController
+              ui->pushButton_Support
+            //   ui->pushButton_Masternode,
+            //   ui->pushButton_MNController
             }, "btn-faq-options");
 
     ui->labelContent_Support->setOpenExternalLinks(true);
@@ -78,8 +78,8 @@ SettingsFaqWidget::SettingsFaqWidget(ELONCOINGUI *parent) :
     connect(ui->pushButton_UnspendableEMC, &QPushButton::clicked, [this](){onFaqClicked(ui->widget_UnspendableEMC);});
     connect(ui->pushButton_Stake, &QPushButton::clicked, [this](){onFaqClicked(ui->widget_Stake);});
     connect(ui->pushButton_Support, &QPushButton::clicked, [this](){onFaqClicked(ui->widget_Support);});
-    connect(ui->pushButton_Masternode, &QPushButton::clicked, [this](){onFaqClicked(ui->widget_Masternode);});
-    connect(ui->pushButton_MNController, &QPushButton::clicked, [this](){onFaqClicked(ui->widget_MNController);});
+    // connect(ui->pushButton_Masternode, &QPushButton::clicked, [this](){onFaqClicked(ui->widget_Masternode);});
+    // connect(ui->pushButton_MNController, &QPushButton::clicked, [this](){onFaqClicked(ui->widget_MNController);});
 
     if (parent)
         connect(parent, &ELONCOINGUI::windowResizeEvent, this, &SettingsFaqWidget::windowResizeEvent);
@@ -115,9 +115,9 @@ std::vector<QPushButton*> SettingsFaqWidget::getButtons()
             ui->pushButton_Intro,
             ui->pushButton_UnspendableEMC,
             ui->pushButton_Stake,
-            ui->pushButton_Support,
-            ui->pushButton_Masternode,
-            ui->pushButton_MNController
+            ui->pushButton_Support
+            // ui->pushButton_Masternode,
+            // ui->pushButton_MNController
     };
 }
 

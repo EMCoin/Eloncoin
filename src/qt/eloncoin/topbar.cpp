@@ -66,7 +66,7 @@ TopBar::TopBar(ELONCOINGUI* _mainWindow, QWidget *parent) :
     ui->containerTop->setProperty("cssClass", "container-top");
 #endif
 
-    std::initializer_list<QWidget*> lblTitles = {ui->labelTitle1, ui->labelTitle3, ui->labelTitle4, ui->labelTrans, ui->labelShield};
+    std::initializer_list<QWidget*> lblTitles = {ui->labelTitle1, ui->labelTitle3, ui->labelTitle4};
     setCssProperty(lblTitles, "text-title-topbar");
     QFont font;
     font.setWeight(QFont::Light);
@@ -74,7 +74,7 @@ TopBar::TopBar(ELONCOINGUI* _mainWindow, QWidget *parent) :
 
     // Amount information top
     ui->widgetTopAmount->setVisible(false);
-    setCssProperty({ui->labelAmountTopEmc, ui->labelAmountTopShieldedEmc}, "amount-small-topbar");
+    setCssProperty({ui->labelAmountTopEmc}, "amount-small-topbar");
     setCssProperty({ui->labelAmountEmc}, "amount-topbar");
     setCssProperty({ui->labelPendingEmc, ui->labelImmatureEmc}, "amount-small-topbar");
 
@@ -125,9 +125,9 @@ TopBar::TopBar(ELONCOINGUI* _mainWindow, QWidget *parent) :
 
     setCssProperty(ui->qrContainer, "container-qr");
     setCssProperty(ui->pushButtonQR, "btn-qr");
-    setCssProperty(ui->pushButtonBalanceInfo, "btn-info");
-    ButtonHoverWatcher * watcher = new ButtonHoverWatcher(this);
-    ui->pushButtonBalanceInfo->installEventFilter(watcher);
+    // setCssProperty(ui->pushButtonBalanceInfo, "btn-info");
+    // ButtonHoverWatcher * watcher = new ButtonHoverWatcher(this);
+    // ui->pushButtonBalanceInfo->installEventFilter(watcher);
 
     // QR image
     QPixmap pixmap("://img-qr-test");
@@ -144,7 +144,7 @@ TopBar::TopBar(ELONCOINGUI* _mainWindow, QWidget *parent) :
 
     connect(ui->pushButtonQR, &QPushButton::clicked, this, &TopBar::onBtnReceiveClicked);
     connect(ui->btnQr, &QPushButton::clicked, this, &TopBar::onBtnReceiveClicked);
-    connect(ui->pushButtonBalanceInfo, &QPushButton::clicked, this, &TopBar::onBtnBalanceInfoClicked);
+    // connect(ui->pushButtonBalanceInfo, &QPushButton::clicked, this, &TopBar::onBtnBalanceInfoClicked);
     connect(ui->pushButtonLock, &ExpandableButton::Mouse_Pressed, this, &TopBar::onBtnLockClicked);
     connect(ui->pushButtonTheme, &ExpandableButton::Mouse_Pressed, this, &TopBar::onThemeClicked);
     connect(ui->pushButtonFAQ, &ExpandableButton::Mouse_Pressed, [this](){window->openFAQ();});
@@ -675,7 +675,7 @@ void TopBar::updateBalances(const interfaces::WalletBalances& newBalance)
     // EMC
     // Top
     ui->labelAmountTopEmc->setText(totalTransparent);
-    ui->labelAmountTopShieldedEmc->setText(totalShielded);
+    // ui->labelAmountTopShieldedEmc->setText(totalShielded);
     // Expanded
     ui->labelAmountEmc->setText(totalEmc);
     ui->labelPendingEmc->setText(GUIUtil::formatBalance(newBalance.unconfirmed_balance + newBalance.unconfirmed_shielded_balance, nDisplayUnit));

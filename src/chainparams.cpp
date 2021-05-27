@@ -32,6 +32,7 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
     genesis.nBits    = nBits;
     genesis.nNonce   = nNonce;
     genesis.hashMerkleRoot = BlockMerkleRoot(genesis);
+    
     return genesis;
 }
 
@@ -54,8 +55,8 @@ void CChainParams::UpdateNetworkUpgradeParameters(Consensus::UpgradeIndex idx, i
  */
 static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
-    const char* pszTimestamp = "U.S. News & World Report Jan 28 2016 With His Absence, Trump Dominates Another Debate";
-    const CScript genesisOutputScript = CScript() << ParseHex("04c10e83b2703ccf322f7dbd62dd5855ac7c10bd055814ce121ba32607d573b8810c02c0582aed05b4deb9c4b77b26d92428c61256cd42774babea0a073b2ed0c9") << OP_CHECKSIG;
+    const char* pszTimestamp = "Elon Musk's Coin - May 26, 2021";
+    const CScript genesisOutputScript = CScript() << ParseHex("0464706edd90531edeca87de69f71baaf8b7f80bf03ef968d5b9f1120cc1075440cb469f2dfc134add83573b7ab531a12584eca3cef4fcc989441e97816fa47185") << OP_CHECKSIG;
     return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward);
 }
 
@@ -70,34 +71,34 @@ static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits
  * + Contains no strange transactions
  */
 static Checkpoints::MapCheckpoints mapCheckpoints = {
-    { 259201, uint256S("1c9121bf9329a6234bfd1ea2d91515f19cd96990725265253f4b164283ade5dd")},
-    { 424998, uint256S("f31e381eedb0ed3ed65fcc98cc71f36012bee32e8efd017c4f9fb0620fd35f6b")},
-    { 616764, uint256S("29dd0bd1c59484f290896687b4ffb6a49afa5c498caf61967c69a541f8191557")}, //!< First block to use new modifierV1
-    { 623933, uint256S("c7aafa648a0f1450157dc93bd4d7448913a85b7448f803b4ab970d91fc2a7da7")},
-    { 791150, uint256S("8e76f462e4e82d1bd21cb72e1ce1567d4ddda2390f26074ffd1f5d9c270e5e50")},
-    { 795000, uint256S("4423cceeb9fd574137a18733416275a70fdf95283cc79ad976ca399aa424a443")},
-    { 863787, uint256S("5b2482eca24caf2a46bb22e0545db7b7037282733faa3a42ec20542509999a64")},
-    { 863795, uint256S("2ad866818c4866e0d555181daccc628056216c0db431f88a825e84ed4f469067")},
-    { 863805, uint256S("a755bd9a22b63c70d3db474f4b2b61a1f86c835b290a081bb3ec1ba2103eb4cb")},
-    { 867733, uint256S("03b26296bf693de5782c76843d2fb649cb66d4b05550c6a79c047ff7e1c3ae15")},
-    { 879650, uint256S("227e1d2b738b6cd83c46d1d64617934ec899d77cee34336a56e61b71acd10bb2")},
-    { 895400, uint256S("7796a0274a608fac12d400198174e50beda992c1d522e52e5b95b884bc1beac6")}, //!< Block that serial# range is enforced
-    { 895991, uint256S("d53013ed7ea5c325b9696c95e07667d6858f8ff7ee13fecfa90827bf3c9ae316")}, //!< Network split here
-    { 908000, uint256S("202708f8c289b676fceb832a079ff6b308a28608339acbf7584de533619d014d")},
-    {1142400, uint256S("98aff9d605bf123247f98b1e3a02567eb5799d208d78ec30fb89737b1c1f79c5")},
-    {1679090, uint256S("f747ce055ba1b12e1f2e842bd480bc647210799359cb2e553ab292065e3419d6")}, //!< First block with a "wrapped" serial spend
-    {1686229, uint256S("bb42bf1e886a7c23474634c90893dd3d68a6ccbfea4ac92a98da5cad0c6a6cb7")}, //!< Last block in the "wrapped" serial attack range
-    {1778954, uint256S("0d3241268264a2908d6babf00d9cd1ffb83d93d7bb4e428820127fe227c2029c")}, //!< Network split here
-    {1788528, uint256S("ea9243ff8fc079fdd7a04f11fac415de4d98e1bb0dc38db6f79f8f8bbfdbe496")}, //!< Network split here
-    {2153200, uint256S("14e477e597d24549cac5e59d97d32155e6ec2861c1003b42d0566f9bf39b65d5")}, //!< First v7 block
-    {2356049, uint256S("62e80d8e193bca84655fb78893b20f54a79f2d71124c4ea37b7ef51a0d5451c4")}, //!< Network split here
-    {2365700, uint256S("b5d0beead57735539abc2db2b0b08cd65db3e5928efd3c3bf3182d5bf013f36c")}, //!< ELONCOIN v4.1.1 enforced
-    {2678402, uint256S("580a26ff0a45177a7a6f387f009c5b26140ea48b4790a857d9a796f8b3c25899")}, //!< Network split here
+    { 0, uint256S("0000073505f85a113d460f5ef415dcc349c71a48d92af2ab59441671ec2e8bcf")},
+    // { 424998, uint256S("f31e381eedb0ed3ed65fcc98cc71f36012bee32e8efd017c4f9fb0620fd35f6b")},
+    // { 616764, uint256S("29dd0bd1c59484f290896687b4ffb6a49afa5c498caf61967c69a541f8191557")}, //!< First block to use new modifierV1
+    // { 623933, uint256S("c7aafa648a0f1450157dc93bd4d7448913a85b7448f803b4ab970d91fc2a7da7")},
+    // { 791150, uint256S("8e76f462e4e82d1bd21cb72e1ce1567d4ddda2390f26074ffd1f5d9c270e5e50")},
+    // { 795000, uint256S("4423cceeb9fd574137a18733416275a70fdf95283cc79ad976ca399aa424a443")},
+    // { 863787, uint256S("5b2482eca24caf2a46bb22e0545db7b7037282733faa3a42ec20542509999a64")},
+    // { 863795, uint256S("2ad866818c4866e0d555181daccc628056216c0db431f88a825e84ed4f469067")},
+    // { 863805, uint256S("a755bd9a22b63c70d3db474f4b2b61a1f86c835b290a081bb3ec1ba2103eb4cb")},
+    // { 867733, uint256S("03b26296bf693de5782c76843d2fb649cb66d4b05550c6a79c047ff7e1c3ae15")},
+    // { 879650, uint256S("227e1d2b738b6cd83c46d1d64617934ec899d77cee34336a56e61b71acd10bb2")},
+    // { 895400, uint256S("7796a0274a608fac12d400198174e50beda992c1d522e52e5b95b884bc1beac6")}, //!< Block that serial# range is enforced
+    // { 895991, uint256S("d53013ed7ea5c325b9696c95e07667d6858f8ff7ee13fecfa90827bf3c9ae316")}, //!< Network split here
+    // { 908000, uint256S("202708f8c289b676fceb832a079ff6b308a28608339acbf7584de533619d014d")},
+    // {1142400, uint256S("98aff9d605bf123247f98b1e3a02567eb5799d208d78ec30fb89737b1c1f79c5")},
+    // {1679090, uint256S("f747ce055ba1b12e1f2e842bd480bc647210799359cb2e553ab292065e3419d6")}, //!< First block with a "wrapped" serial spend
+    // {1686229, uint256S("bb42bf1e886a7c23474634c90893dd3d68a6ccbfea4ac92a98da5cad0c6a6cb7")}, //!< Last block in the "wrapped" serial attack range
+    // {1778954, uint256S("0d3241268264a2908d6babf00d9cd1ffb83d93d7bb4e428820127fe227c2029c")}, //!< Network split here
+    // {1788528, uint256S("ea9243ff8fc079fdd7a04f11fac415de4d98e1bb0dc38db6f79f8f8bbfdbe496")}, //!< Network split here
+    // {2153200, uint256S("14e477e597d24549cac5e59d97d32155e6ec2861c1003b42d0566f9bf39b65d5")}, //!< First v7 block
+    // {2356049, uint256S("62e80d8e193bca84655fb78893b20f54a79f2d71124c4ea37b7ef51a0d5451c4")}, //!< Network split here
+    // {2365700, uint256S("b5d0beead57735539abc2db2b0b08cd65db3e5928efd3c3bf3182d5bf013f36c")}, //!< ELONCOIN v4.1.1 enforced
+    // {2678402, uint256S("580a26ff0a45177a7a6f387f009c5b26140ea48b4790a857d9a796f8b3c25899")}, //!< Network split here
 };
 
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1591401645, // * UNIX timestamp of last checkpoint block
+    1622000000, // * UNIX timestamp of last checkpoint block
     5607713,    // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the UpdateTip debug.log lines)
     3000        // * estimated number of transactions per day after checkpoint
@@ -110,14 +111,14 @@ static Checkpoints::MapCheckpoints mapCheckpointsTestnet = {
 
 static const Checkpoints::CCheckpointData dataTestnet = {
     &mapCheckpointsTestnet,
-    1454124731,
+    1622000001,
     0,
     3000};
 
 static Checkpoints::MapCheckpoints mapCheckpointsRegtest = {{0, uint256S("0x001")}};
 static const Checkpoints::CCheckpointData dataRegtest = {
     &mapCheckpointsRegtest,
-    1454124731,
+    1622000002,
     0,
     100};
 
@@ -128,10 +129,11 @@ public:
     {
         strNetworkID = "main";
 
-        genesis = CreateGenesisBlock(1454124731, 2402015, 0x1e0ffff0, 1, 250 * COIN);
+        genesis = CreateGenesisBlock(1622000000, 2323738, 0x1e0ffff0, 1, 0 * COIN);
+        
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x0000041e482b9b9691d98eefb48473405c0b8ec31b76df3797c74a78680ef818"));
-        assert(genesis.hashMerkleRoot == uint256S("0x1b2ef6e2f28be914103a277377ae7729dcd125dfeb8bf97bd5964ba72b6dc39b"));
+        assert(consensus.hashGenesisBlock == uint256S("0x0000073505f85a113d460f5ef415dcc349c71a48d92af2ab59441671ec2e8bcf"));
+        assert(genesis.hashMerkleRoot == uint256S("0xf2c49457d24e5ea621740e30a6bb443b6f094acd43cdd84ddbebed30c4d585e4"));
 
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.powLimit   = ~UINT256_ZERO >> 20;   // ELONCOIN starting difficulty is 1 / 2^12
@@ -143,32 +145,32 @@ public:
         consensus.nFutureTimeDriftPoW = 7200;
         consensus.nFutureTimeDriftPoS = 180;
         consensus.nMasternodeCountDrift = 20;       // num of MN we allow the see-saw payments to be off by
-        consensus.nMaxMoneyOut = 21000000 * COIN;
+        consensus.nMaxMoneyOut = 10000000000 * COIN;
         consensus.nPoolMaxTransactions = 3;
         consensus.nProposalEstablishmentTime = 60 * 60 * 24;    // must be at least a day old to make it into a budget
         consensus.nStakeMinAge = 60 * 60;
         consensus.nStakeMinDepth = 600;
         consensus.nTargetTimespan = 40 * 60;
         consensus.nTargetTimespanV2 = 30 * 60;
-        consensus.nTargetSpacing = 1 * 60;
+        consensus.nTargetSpacing = 71;
         consensus.nTimeSlotLength = 15;
         consensus.nMaxProposalPayments = 6;
 
         // spork keys
-        consensus.strSporkPubKey = "0410050aa740d280b134b40b40658781fc1116ba7700764e0ce27af3e1737586b3257d19232e0cb5084947f5107e44bcd577f126c9eb4a30ea2807b271d2145298";
-        consensus.strSporkPubKeyOld = "040F129DE6546FE405995329A887329BED4321325B1A73B0A257423C05C1FCFE9E40EF0678AEF59036A22C42E61DFD29DF7EFB09F56CC73CADF64E05741880E3E7";
+        consensus.strSporkPubKey = "04579ebd86bcb111cba359c2e15b3fd5e87b44c7553c6df971aeb096558cb7d28157262747eac904b215e87cf466450a5ceb16ddf654aa9c78589eab7ddbb1ec62";
+        consensus.strSporkPubKeyOld = "04a14da2d940ef21aca52f6f2bccafb44f875f1116eef078c7d420aa4b4e9cdd449de974de71fbc0185b6795d650968f2de347df9956bef116a016a917a526d087";
         consensus.nTime_EnforceNewSporkKey = 1608512400;    //!> December 21, 2020 01:00:00 AM GMT
         consensus.nTime_RejectOldSporkKey = 1614560400;     //!> March 1, 2021 01:00:00 AM GMT
 
         // height-based activations
-        consensus.height_last_invalid_UTXO = 894538;
-        consensus.height_last_ZC_AccumCheckpoint = 1686240;
-        consensus.height_last_ZC_WrappedSerials = 1686229;
-        consensus.height_ZC_RecalcAccumulators = 908000;
+        consensus.height_last_invalid_UTXO = -1;
+        consensus.height_last_ZC_AccumCheckpoint = -1;
+        consensus.height_last_ZC_WrappedSerials = -1;
+        consensus.height_ZC_RecalcAccumulators = 999999999;
 
         // validation by-pass
-        consensus.nElonCoinBadBlockTime = 1471401614;    // Skip nBit validation of Block 259201 per PR #915
-        consensus.nElonCoinBadBlockBits = 0x1c056dac;    // Skip nBit validation of Block 259201 per PR #915
+        consensus.nElonCoinBadBlockTime = 0;    // Skip nBit validation of Block 259201 per PR #915
+        consensus.nElonCoinBadBlockBits = 0;    // Skip nBit validation of Block 259201 per PR #915
 
         // Zerocoin-related params
         consensus.ZC_Modulus = "25195908475657893494027183240048398571429282126204032027777137836043662020707595556264018525880784"
@@ -189,15 +191,15 @@ public:
                 Consensus::NetworkUpgrade::ALWAYS_ACTIVE;
         consensus.vUpgrades[Consensus::UPGRADE_TESTDUMMY].nActivationHeight =
                 Consensus::NetworkUpgrade::NO_ACTIVATION_HEIGHT;
-        consensus.vUpgrades[Consensus::UPGRADE_POS].nActivationHeight           = 259201;
-        consensus.vUpgrades[Consensus::UPGRADE_POS_V2].nActivationHeight        = 615800;
-        consensus.vUpgrades[Consensus::UPGRADE_ZC].nActivationHeight            = 863787;
-        consensus.vUpgrades[Consensus::UPGRADE_ZC_V2].nActivationHeight         = 1153160;
-        consensus.vUpgrades[Consensus::UPGRADE_BIP65].nActivationHeight         = 1808634;
-        consensus.vUpgrades[Consensus::UPGRADE_ZC_PUBLIC].nActivationHeight     = 1880000;
-        consensus.vUpgrades[Consensus::UPGRADE_V3_4].nActivationHeight          = 1967000;
-        consensus.vUpgrades[Consensus::UPGRADE_V4_0].nActivationHeight          = 2153200;
-        consensus.vUpgrades[Consensus::UPGRADE_V5_0].nActivationHeight          = 2700500;
+        consensus.vUpgrades[Consensus::UPGRADE_POS].nActivationHeight           = 1001;
+        consensus.vUpgrades[Consensus::UPGRADE_POS_V2].nActivationHeight        = 1001;
+        consensus.vUpgrades[Consensus::UPGRADE_ZC].nActivationHeight            = Consensus::NetworkUpgrade::NO_ACTIVATION_HEIGHT;
+        consensus.vUpgrades[Consensus::UPGRADE_ZC_V2].nActivationHeight         = Consensus::NetworkUpgrade::NO_ACTIVATION_HEIGHT;
+        consensus.vUpgrades[Consensus::UPGRADE_BIP65].nActivationHeight         = Consensus::NetworkUpgrade::NO_ACTIVATION_HEIGHT;
+        consensus.vUpgrades[Consensus::UPGRADE_ZC_PUBLIC].nActivationHeight     = Consensus::NetworkUpgrade::NO_ACTIVATION_HEIGHT;
+        consensus.vUpgrades[Consensus::UPGRADE_V3_4].nActivationHeight          = Consensus::NetworkUpgrade::NO_ACTIVATION_HEIGHT;
+        consensus.vUpgrades[Consensus::UPGRADE_V4_0].nActivationHeight          = Consensus::NetworkUpgrade::NO_ACTIVATION_HEIGHT;
+        consensus.vUpgrades[Consensus::UPGRADE_V5_0].nActivationHeight          = Consensus::NetworkUpgrade::NO_ACTIVATION_HEIGHT;
 
         consensus.vUpgrades[Consensus::UPGRADE_ZC].hashActivationBlock =
                 uint256S("0x5b2482eca24caf2a46bb22e0545db7b7037282733faa3a42ec20542509999a64");
@@ -221,29 +223,29 @@ public:
         pchMessageStart[1] = 0xc4;
         pchMessageStart[2] = 0xfd;
         pchMessageStart[3] = 0xe9;
-        nDefaultPort = 51472;
+        nDefaultPort = 7106;
 
         // Note that of those with the service bits flag, most only support a subset of possible options
-        vSeeds.emplace_back("fuzzbawls.pw", "eloncoin.seed.fuzzbawls.pw", true);     // Primary DNS Seeder from Fuzzbawls
-        vSeeds.emplace_back("fuzzbawls.pw", "eloncoin.seed2.fuzzbawls.pw", true);    // Secondary DNS Seeder from Fuzzbawls
+        vSeeds.emplace_back("eloncoin.org", "seed01.eloncoin.org", true);     // Primary DNS Seeder from Fuzzbawls
+        vSeeds.emplace_back("eloncoin.org", "seed02.eloncoin.org", true);    // Secondary DNS Seeder from Fuzzbawls
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 30);
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 13);
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 33);         // starting with 'E'
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 15);         // staring with '7'
         base58Prefixes[STAKING_ADDRESS] = std::vector<unsigned char>(1, 63);     // starting with 'S'
-        base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 212);
-        base58Prefixes[EXT_PUBLIC_KEY] = {0x02, 0x2D, 0x25, 0x33};
-        base58Prefixes[EXT_SECRET_KEY] = {0x02, 0x21, 0x31, 0x2B};
+        base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 222);
+        base58Prefixes[EXT_PUBLIC_KEY] = {0x02, 0x2D, 0x25, 0x34};
+        base58Prefixes[EXT_SECRET_KEY] = {0x02, 0x21, 0x31, 0x2E};
         // BIP44 coin type is from https://github.com/satoshilabs/slips/blob/master/slip-0044.md
-        base58Prefixes[EXT_COIN_TYPE] = {0x80, 0x00, 0x00, 0x77};
+        base58Prefixes[EXT_COIN_TYPE] = {0x80, 0x00, 0x00, 0x78};
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_main, pnSeed6_main + ARRAYLEN(pnSeed6_main));
 
         // Sapling
-        bech32HRPs[SAPLING_PAYMENT_ADDRESS]      = "ps";
-        bech32HRPs[SAPLING_FULL_VIEWING_KEY]     = "pviews";
+        bech32HRPs[SAPLING_PAYMENT_ADDRESS]      = "es";
+        bech32HRPs[SAPLING_FULL_VIEWING_KEY]     = "eviews";
         bech32HRPs[SAPLING_INCOMING_VIEWING_KEY] = "emcks";
-        bech32HRPs[SAPLING_EXTENDED_SPEND_KEY]   = "p-secret-spending-key-main";
-        bech32HRPs[SAPLING_EXTENDED_FVK]         = "pxviews";
+        bech32HRPs[SAPLING_EXTENDED_SPEND_KEY]   = "e-secret-spending-key-main";
+        bech32HRPs[SAPLING_EXTENDED_FVK]         = "exviews";
     }
 
     const Checkpoints::CCheckpointData& Checkpoints() const
@@ -263,10 +265,10 @@ public:
     {
         strNetworkID = "test";
 
-        genesis = CreateGenesisBlock(1454124731, 2402015, 0x1e0ffff0, 1, 250 * COIN);
+        genesis = CreateGenesisBlock(1622000001, 2449372, 0x1e0ffff0, 1, 0 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x0000041e482b9b9691d98eefb48473405c0b8ec31b76df3797c74a78680ef818"));
-        assert(genesis.hashMerkleRoot == uint256S("0x1b2ef6e2f28be914103a277377ae7729dcd125dfeb8bf97bd5964ba72b6dc39b"));
+        assert(consensus.hashGenesisBlock == uint256S("0x0000022fffa55d04093b0088cca26076498f46c7b56e6b01f7162f07ca14f31e"));
+        assert(genesis.hashMerkleRoot == uint256S("0xf2c49457d24e5ea621740e30a6bb443b6f094acd43cdd84ddbebed30c4d585e4"));
 
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.powLimit   = ~UINT256_ZERO >> 20;   // ELONCOIN starting difficulty is 1 / 2^12
@@ -278,20 +280,20 @@ public:
         consensus.nFutureTimeDriftPoW = 7200;
         consensus.nFutureTimeDriftPoS = 180;
         consensus.nMasternodeCountDrift = 20;       // num of MN we allow the see-saw payments to be off by
-        consensus.nMaxMoneyOut = 21000000 * COIN;
+        consensus.nMaxMoneyOut = 10000000000 * COIN;
         consensus.nPoolMaxTransactions = 3;
         consensus.nProposalEstablishmentTime = 60 * 5;  // at least 5 min old to make it into a budget
         consensus.nStakeMinAge = 60 * 60;
         consensus.nStakeMinDepth = 100;
         consensus.nTargetTimespan = 40 * 60;
         consensus.nTargetTimespanV2 = 30 * 60;
-        consensus.nTargetSpacing = 1 * 60;
+        consensus.nTargetSpacing = 71;
         consensus.nTimeSlotLength = 15;
         consensus.nMaxProposalPayments = 20;
 
         // spork keys
-        consensus.strSporkPubKey = "04677c34726c491117265f4b1c83cef085684f36c8df5a97a3a42fc499316d0c4e63959c9eca0dba239d9aaaf72011afffeb3ef9f51b9017811dec686e412eb504";
-        consensus.strSporkPubKeyOld = "04E88BB455E2A04E65FCC41D88CD367E9CCE1F5A409BE94D8C2B4B35D223DED9C8E2F4E061349BA3A38839282508066B6DC4DB72DD432AC4067991E6BF20176127";
+        consensus.strSporkPubKey = "04a14da2d940ef21aca52f6f2bccafb44f875f1116eef078c7d420aa4b4e9cdd449de974de71fbc0185b6795d650968f2de347df9956bef116a016a917a526d087";
+        consensus.strSporkPubKeyOld = "04a14da2d940ef21aca52f6f2bccafb44f875f1116eef078c7d420aa4b4e9cdd449de974de71fbc0185b6795d650968f2de347df9956bef116a016a917a526d087";
         consensus.nTime_EnforceNewSporkKey = 1608512400;    //!> December 21, 2020 01:00:00 AM GMT
         consensus.nTime_RejectOldSporkKey = 1614560400;     //!> March 1, 2021 01:00:00 AM GMT
 
@@ -322,13 +324,13 @@ public:
                 Consensus::NetworkUpgrade::NO_ACTIVATION_HEIGHT;
         consensus.vUpgrades[Consensus::UPGRADE_POS].nActivationHeight           = 201;
         consensus.vUpgrades[Consensus::UPGRADE_POS_V2].nActivationHeight        = 201;
-        consensus.vUpgrades[Consensus::UPGRADE_ZC].nActivationHeight            = 201;
-        consensus.vUpgrades[Consensus::UPGRADE_ZC_V2].nActivationHeight         = 201;
-        consensus.vUpgrades[Consensus::UPGRADE_BIP65].nActivationHeight         = 201;
-        consensus.vUpgrades[Consensus::UPGRADE_ZC_PUBLIC].nActivationHeight     = 201;
-        consensus.vUpgrades[Consensus::UPGRADE_V3_4].nActivationHeight          = 201;
-        consensus.vUpgrades[Consensus::UPGRADE_V4_0].nActivationHeight          = 201;
-        consensus.vUpgrades[Consensus::UPGRADE_V5_0].nActivationHeight          = 201;
+        consensus.vUpgrades[Consensus::UPGRADE_ZC].nActivationHeight            = -1;
+        consensus.vUpgrades[Consensus::UPGRADE_ZC_V2].nActivationHeight         = -1;
+        consensus.vUpgrades[Consensus::UPGRADE_BIP65].nActivationHeight         = -1;
+        consensus.vUpgrades[Consensus::UPGRADE_ZC_PUBLIC].nActivationHeight     = -1;
+        consensus.vUpgrades[Consensus::UPGRADE_V3_4].nActivationHeight          = -1;
+        consensus.vUpgrades[Consensus::UPGRADE_V4_0].nActivationHeight          = -1;
+        consensus.vUpgrades[Consensus::UPGRADE_V5_0].nActivationHeight          = -1;
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -339,14 +341,14 @@ public:
         pchMessageStart[1] = 0xe6;
         pchMessageStart[2] = 0xd5;
         pchMessageStart[3] = 0xca;
-        nDefaultPort = 51474;
+        nDefaultPort = 7108;
 
         // nodes with support for servicebits filtering should be at the top
-        vSeeds.emplace_back("fuzzbawls.pw", "eloncoin-testnet.seed.fuzzbawls.pw", true);
-        vSeeds.emplace_back("fuzzbawls.pw", "eloncoin-testnet.seed2.fuzzbawls.pw", true);
+        vSeeds.emplace_back("eloncoin.org", "eloncoin-testnet.seed1.eloncoin.org", true);
+        vSeeds.emplace_back("eloncoin.org", "eloncoin-testnet.seed2.eloncoin.org", true);
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 139); // Testnet eloncoin addresses start with 'x' or 'y'
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 19);  // Testnet eloncoin script addresses start with '8' or '9'
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 92); // Testnet eloncoin addresses start with 'e'
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 18);  // Testnet eloncoin script addresses start with '8'
         base58Prefixes[STAKING_ADDRESS] = std::vector<unsigned char>(1, 73);     // starting with 'W'
         base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 239);     // Testnet private keys start with '9' or 'c' (Bitcoin defaults)
         // Testnet eloncoin BIP32 pubkeys start with 'DRKV'
@@ -359,11 +361,11 @@ public:
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_test, pnSeed6_test + ARRAYLEN(pnSeed6_test));
 
         // Sapling
-        bech32HRPs[SAPLING_PAYMENT_ADDRESS]      = "ptestsapling";
-        bech32HRPs[SAPLING_FULL_VIEWING_KEY]     = "pviewtestsapling";
+        bech32HRPs[SAPLING_PAYMENT_ADDRESS]      = "etestsapling";
+        bech32HRPs[SAPLING_FULL_VIEWING_KEY]     = "eviewtestsapling";
         bech32HRPs[SAPLING_INCOMING_VIEWING_KEY] = "emcktestsapling";
-        bech32HRPs[SAPLING_EXTENDED_SPEND_KEY]   = "p-secret-spending-key-test";
-        bech32HRPs[SAPLING_EXTENDED_FVK]         = "pxviewtestsapling";
+        bech32HRPs[SAPLING_EXTENDED_SPEND_KEY]   = "e-secret-spending-key-test";
+        bech32HRPs[SAPLING_EXTENDED_FVK]         = "exviewtestsapling";
     }
 
     const Checkpoints::CCheckpointData& Checkpoints() const
@@ -382,10 +384,10 @@ public:
     {
         strNetworkID = "regtest";
 
-        genesis = CreateGenesisBlock(1454124731, 2402015, 0x1e0ffff0, 1, 250 * COIN);
+        genesis = CreateGenesisBlock(1622000002, 65142, 0x1e0ffff0, 1, 0 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x0000041e482b9b9691d98eefb48473405c0b8ec31b76df3797c74a78680ef818"));
-        assert(genesis.hashMerkleRoot == uint256S("0x1b2ef6e2f28be914103a277377ae7729dcd125dfeb8bf97bd5964ba72b6dc39b"));
+        assert(consensus.hashGenesisBlock == uint256S("0x000003688913e41b789a30aa3230bc74f3782319ec48984800991e58b811d860"));
+        assert(genesis.hashMerkleRoot == uint256S("0xf2c49457d24e5ea621740e30a6bb443b6f094acd43cdd84ddbebed30c4d585e4"));
 
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.powLimit   = ~UINT256_ZERO >> 20;   // ELONCOIN starting difficulty is 1 / 2^12
@@ -397,14 +399,14 @@ public:
         consensus.nFutureTimeDriftPoW = 7200;
         consensus.nFutureTimeDriftPoS = 180;
         consensus.nMasternodeCountDrift = 4;        // num of MN we allow the see-saw payments to be off by
-        consensus.nMaxMoneyOut = 43199500 * COIN;
+        consensus.nMaxMoneyOut = 10000000000 * COIN;
         consensus.nPoolMaxTransactions = 2;
         consensus.nProposalEstablishmentTime = 60 * 5;  // at least 5 min old to make it into a budget
         consensus.nStakeMinAge = 0;
         consensus.nStakeMinDepth = 2;
         consensus.nTargetTimespan = 40 * 60;
         consensus.nTargetTimespanV2 = 30 * 60;
-        consensus.nTargetSpacing = 1 * 60;
+        consensus.nTargetSpacing = 71;
         consensus.nTimeSlotLength = 15;
         consensus.nMaxProposalPayments = 20;
 
@@ -413,14 +415,14 @@ public:
         private key hex: bd4960dcbd9e7f2223f24e7164ecb6f1fe96fc3a416f5d3a830ba5720c84b8ca
         Address: yCvUVd72w7xpimf981m114FSFbmAmne7j9
         */
-        consensus.strSporkPubKey = "043969b1b0e6f327de37f297a015d37e2235eaaeeb3933deecd8162c075cee0207b13537618bde640879606001a8136091c62ec272dd0133424a178704e6e75bb7";
+        consensus.strSporkPubKey = "04a14da2d940ef21aca52f6f2bccafb44f875f1116eef078c7d420aa4b4e9cdd449de974de71fbc0185b6795d650968f2de347df9956bef116a016a917a526d087";
         consensus.strSporkPubKeyOld = "";
         consensus.nTime_EnforceNewSporkKey = 0;
         consensus.nTime_RejectOldSporkKey = 0;
 
         // height based activations
         consensus.height_last_invalid_UTXO = -1;
-        consensus.height_last_ZC_AccumCheckpoint = 310;     // no checkpoints on regtest
+        consensus.height_last_ZC_AccumCheckpoint = -1;     // no checkpoints on regtest
         consensus.height_last_ZC_WrappedSerials = -1;
         consensus.height_ZC_RecalcAccumulators = 999999999;
 
@@ -445,15 +447,15 @@ public:
                 Consensus::NetworkUpgrade::NO_ACTIVATION_HEIGHT;
         consensus.vUpgrades[Consensus::UPGRADE_POS].nActivationHeight           = 251;
         consensus.vUpgrades[Consensus::UPGRADE_POS_V2].nActivationHeight        = 251;
-        consensus.vUpgrades[Consensus::UPGRADE_ZC].nActivationHeight            = 300;
-        consensus.vUpgrades[Consensus::UPGRADE_ZC_V2].nActivationHeight         = 300;
+        consensus.vUpgrades[Consensus::UPGRADE_ZC].nActivationHeight            = -1;
+        consensus.vUpgrades[Consensus::UPGRADE_ZC_V2].nActivationHeight         = -1;
         consensus.vUpgrades[Consensus::UPGRADE_BIP65].nActivationHeight         =
                 Consensus::NetworkUpgrade::ALWAYS_ACTIVE;
-        consensus.vUpgrades[Consensus::UPGRADE_ZC_PUBLIC].nActivationHeight     = 400;
-        consensus.vUpgrades[Consensus::UPGRADE_V3_4].nActivationHeight          = 251;
+        consensus.vUpgrades[Consensus::UPGRADE_ZC_PUBLIC].nActivationHeight     = -1;
+        consensus.vUpgrades[Consensus::UPGRADE_V3_4].nActivationHeight          = -1;
         consensus.vUpgrades[Consensus::UPGRADE_V4_0].nActivationHeight          =
                 Consensus::NetworkUpgrade::ALWAYS_ACTIVE;
-        consensus.vUpgrades[Consensus::UPGRADE_V5_0].nActivationHeight          = 300;
+        consensus.vUpgrades[Consensus::UPGRADE_V5_0].nActivationHeight          = -1;
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -464,10 +466,10 @@ public:
         pchMessageStart[1] = 0xcf;
         pchMessageStart[2] = 0x7e;
         pchMessageStart[3] = 0xac;
-        nDefaultPort = 51476;
+        nDefaultPort = 7110;
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 139); // Testnet eloncoin addresses start with 'x' or 'y'
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 19);  // Testnet eloncoin script addresses start with '8' or '9'
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 92); // Testnet eloncoin addresses start with 'e'
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 18);  // Testnet eloncoin script addresses start with '8'
         base58Prefixes[STAKING_ADDRESS] = std::vector<unsigned char>(1, 73);     // starting with 'W'
         base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 239);     // Testnet private keys start with '9' or 'c' (Bitcoin defaults)
         // Testnet eloncoin BIP32 pubkeys start with 'DRKV'
@@ -478,11 +480,11 @@ public:
         base58Prefixes[EXT_COIN_TYPE] = {0x80, 0x00, 0x00, 0x01};
 
         // Sapling
-        bech32HRPs[SAPLING_PAYMENT_ADDRESS]      = "ptestsapling";
-        bech32HRPs[SAPLING_FULL_VIEWING_KEY]     = "pviewtestsapling";
+        bech32HRPs[SAPLING_PAYMENT_ADDRESS]      = "etestsapling";
+        bech32HRPs[SAPLING_FULL_VIEWING_KEY]     = "eviewtestsapling";
         bech32HRPs[SAPLING_INCOMING_VIEWING_KEY] = "emcktestsapling";
-        bech32HRPs[SAPLING_EXTENDED_SPEND_KEY]   = "p-secret-spending-key-test";
-        bech32HRPs[SAPLING_EXTENDED_FVK]         = "pxviewtestsapling";
+        bech32HRPs[SAPLING_EXTENDED_SPEND_KEY]   = "e-secret-spending-key-test";
+        bech32HRPs[SAPLING_EXTENDED_FVK]         = "exviewtestsapling";
     }
 
     const Checkpoints::CCheckpointData& Checkpoints() const

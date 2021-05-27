@@ -259,7 +259,7 @@ background-color:transparent;
             </property>
            </widget>
           </item>
-          <item>
+          <!-- <item>
            <widget class="QToolButton" name="btnMaster">
             <property name="minimumSize">
              <size>
@@ -284,7 +284,7 @@ NODES</string>
              <bool>true</bool>
             </property>
            </widget>
-          </item>
+          </item> -->
           <item>
            <widget class="QToolButton" name="btnColdStaking">
             <property name="minimumSize">

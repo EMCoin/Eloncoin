@@ -45,13 +45,13 @@ SendWidget::SendWidget(ELONCOINGUI* parent) :
     setCssProperty(ui->labelTitle, "text-title-screen");
     ui->labelTitle->setFont(fontLight);
 
-    /* Button Group */
-    setCssProperty(ui->pushLeft, "btn-check-left");
-    ui->pushLeft->setChecked(true);
-    setCssProperty(ui->pushRight, "btn-check-right");
+    // /* Button Group */
+    // setCssProperty(ui->pushLeft, "btn-check-left");
+    // ui->pushLeft->setChecked(true);
+    // setCssProperty(ui->pushRight, "btn-check-right");
 
-    /* Subtitle */
-    setCssProperty({ui->labelSubtitle1, ui->labelSubtitle2}, "text-subtitle");
+    // /* Subtitle */
+    // setCssProperty({ui->labelSubtitle1, ui->labelSubtitle2}, "text-subtitle");
 
     /* Address - Amount*/
     setCssProperty({ui->labelSubtitleAddress, ui->labelSubtitleAmount}, "text-title");
@@ -122,8 +122,8 @@ SendWidget::SendWidget(ELONCOINGUI* parent) :
     setCustomFeeSelected(false);
 
     // Connect
-    connect(ui->pushLeft, &QPushButton::clicked, [this](){onEMCSelected(true);});
-    connect(ui->pushRight,  &QPushButton::clicked, [this](){onEMCSelected(false);});
+    // connect(ui->pushLeft, &QPushButton::clicked, [this](){onEMCSelected(true);});
+    // connect(ui->pushRight,  &QPushButton::clicked, [this](){onEMCSelected(false);});
     connect(ui->pushButtonSave, &QPushButton::clicked, this, &SendWidget::onSendClicked);
     connect(ui->pushButtonAddRecipient, &QPushButton::clicked, this, &SendWidget::onAddEntryClicked);
     connect(ui->pushButtonClear, &QPushButton::clicked, [this](){clearAll(true);});
@@ -794,7 +794,7 @@ void SendWidget::onEMCSelected(bool _isTransparent)
     isTransparent = _isTransparent;
 
     if (!isTransparent && !walletModel->isSaplingEnforced()) {
-        ui->pushLeft->setChecked(true);
+        // ui->pushLeft->setChecked(true);
         inform(tr("Cannot perform shielded operations, v5 upgrade isn't being enforced yet!"));
         return;
     }

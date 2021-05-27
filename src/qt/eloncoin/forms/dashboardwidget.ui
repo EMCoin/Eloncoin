@@ -574,7 +574,7 @@
             </property>
            </widget>
           </item>
-          <item>
+          <!-- <item>
            <widget class="QLabel" name="labelAmountZemc">
             <property name="text">
              <string notr="true">0 zEMC</string>
@@ -583,7 +583,7 @@
              <set>Qt::AlignCenter</set>
             </property>
            </widget>
-          </item>
+          </item> -->
          </layout>
         </item>
         <item>
@@ -733,13 +733,13 @@
                   </property>
                  </widget>
                 </item>
-                <item>
+                <!-- <item>
                  <widget class="QLabel" name="labelZemc">
                   <property name="text">
                    <string notr="true">zEMC</string>
                   </property>
                  </widget>
-                </item>
+                </item> -->
                </layout>
               </item>
               <item>

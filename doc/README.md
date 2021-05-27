@@ -51,7 +51,7 @@ The ELONCOIN repo's [root README](/README.md) contains relevant information on t
 - [Multiwallet Qt Development](multiwallet-qt.md)
 - [Release Notes](release-notes.md)
 - [Release Process](release-process.md)
-- [Source Code Documentation (External Link)](https://www.fuzzbawls.pw/eloncoin/doxygen/)
+- [Source Code Documentation (External Link)](https://www.eloncoin.org/eloncoin/doxygen/)
 - [Translation Process](translation_process.md)
 - [Unit Tests](unit-tests.md)
 - [Unauthenticated REST Interface](REST-interface.md)

@@ -4005,27 +4005,21 @@ pour voir votre solde de monnaie dépensable sur le réseau.
                            &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
                            ELONCOIN is a form of digital online money using blockchain technology
                            that can be easily transferred globally, instantly, and with near
-                           zero fees.  ELONCOIN incorporates market leading security &amp;
-                           privacy and is also the first PoS (Proof of Stake) Cryptocurrency
-                           to implement Sapling(SHIELD), a zk-SNARKs based privacy protocol.
+                           zero fees.
                            &lt;/p&gt;&lt;p align="justify"&gt;
                            ELONCOIN utilizes a Proof of Stake (PoS) consensus system algorithm,
                            allowing all owners of ELONCOIN to participate in earning block rewards
-                           while securing the network with full node wallets, as well as to
-                           run Masternodes to create and vote on proposals.
+                           while securing the network with full node wallets.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                          </source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
 ELONCOIN est une forme de monnaie numérique utilisant la technologie blockchain
 qui peut être facilement transférée partout dans le monde, instantanément, et presque
-sans frais. ELONCOIN est un chef de file en matière de sécurité &amp;
-confidentialité, elle est aussi la première crypto-monnaie PoS (Proof od Stake)
-à implémenter Sapling (SHIELD), un protocole de confidentialité basé sur zk-SNARKs. 
+sans frais.
 &lt;/p&gt;&lt;p align="justify"&gt;
 ELONCOIN utilises un système de consensus Proof of Stake (PoS),
 qui permet à tous les détenteurs de ELONCOIN d'obtenir des récompenses
-tout en sécurisant le réseau avec leur portefeuille full node, ainsi qu'en
-exécutant des Maternodes pour créer et voter des propositions.
+tout en sécurisant le réseau avec leur portefeuille full node.
 &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
 </translation>
     </message>
@@ -6603,8 +6597,8 @@ SVP éxécutez 'sapling-fetch-params' ou './util/fetch-params.sh' et redémarrez
         <translation>Envoyer</translation>
     </message>
     <message>
-        <source>Transfer coins publicly or privately</source>
-        <translation>Envoyer des pièces publiques ou privées</translation>
+        <source>Transfer coins</source>
+        <translation>Envoyer des pièces</translation>
     </message>
     <message>
         <source>Transparent</source>

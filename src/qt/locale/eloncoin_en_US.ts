@@ -4149,28 +4149,22 @@ There was an error trying to save the address list to %1. Please try again.</tra
                            &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
                            ELONCOIN is a form of digital online money using blockchain technology
                            that can be easily transferred globally, instantly, and with near
-                           zero fees.  ELONCOIN incorporates market leading security &amp;
-                           privacy and is also the first PoS (Proof of Stake) Cryptocurrency
-                           to implement Sapling(SHIELD), a zk-SNARKs based privacy protocol.
+                           zero fees.
                            &lt;/p&gt;&lt;p align="justify"&gt;
                            ELONCOIN utilizes a Proof of Stake (PoS) consensus system algorithm,
                            allowing all owners of ELONCOIN to participate in earning block rewards
-                           while securing the network with full node wallets, as well as to
-                           run Masternodes to create and vote on proposals.
+                           while securing the network with full node wallets.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                          </source>
         <translation>
                            &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
                            ELONCOIN is a form of digital online money using blockchain technology
                            that can be easily transferred globally, instantly, and with near
-                           zero fees.  ELONCOIN incorporates market leading security &amp;
-                           privacy and is also the first PoS (Proof of Stake) Cryptocurrency
-                           to implement Sapling(SHIELD), a zk-SNARKs based privacy protocol.
+                           zero fees.
                            &lt;/p&gt;&lt;p align="justify"&gt;
                            ELONCOIN utilizes a Proof of Stake (PoS) consensus system algorithm,
                            allowing all owners of ELONCOIN to participate in earning block rewards
-                           while securing the network with full node wallets, as well as to
-                           run Masternodes to create and vote on proposals.
+                           while securing the network with full node wallets.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                          </translation>
     </message>
@@ -6829,8 +6823,8 @@ Please run 'sapling-fetch-params' or './util/fetch-params.sh' and then restart.<
         <translation>Send</translation>
     </message>
     <message>
-        <source>Transfer coins publicly or privately</source>
-        <translation>Transfer coins publicly or privately</translation>
+        <source>Transfer coins</source>
+        <translation>Transfer coins</translation>
     </message>
     <message>
         <source>Transparent</source>

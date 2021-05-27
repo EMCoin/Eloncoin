@@ -97,7 +97,7 @@
             </property>
            </spacer>
           </item>
-          <item>
+          <!-- <item>
            <widget class="QWidget" name="containerViewPrivacyChecks" native="true">
             <layout class="QVBoxLayout" name="containerPrivacyChecks">
              <property name="spacing">
@@ -210,7 +210,7 @@
              </item>
             </layout>
            </widget>
-          </item>
+          </item> -->
          </layout>
         </item>
         <item>

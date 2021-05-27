@@ -4032,14 +4032,11 @@ da biste vidjeli i mogli potrošiti sredstva na mreži.
                            &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
                            ELONCOIN is a form of digital online money using blockchain technology
                            that can be easily transferred globally, instantly, and with near
-                           zero fees.  ELONCOIN incorporates market leading security &amp;
-                           privacy and is also the first PoS (Proof of Stake) Cryptocurrency
-                           to implement Sapling(SHIELD), a zk-SNARKs based privacy protocol.
+                           zero fees.
                            &lt;/p&gt;&lt;p align="justify"&gt;
                            ELONCOIN utilizes a Proof of Stake (PoS) consensus system algorithm,
                            allowing all owners of ELONCOIN to participate in earning block rewards
-                           while securing the network with full node wallets, as well as to
-                           run Masternodes to create and vote on proposals.
+                           while securing the network with full node wallets.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                          </source>
         <translation>
@@ -4047,14 +4044,10 @@ da biste vidjeli i mogli potrošiti sredstva na mreži.
 &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align="justify"&gt;
 ELONCOIN je oblik digitalnog online novca koji koristi blockchain tehnologiju
 koji se lako može slati i primati globalno, trenutno, i gotovo bez naknade.
-ELONCOIN uključuje vodeću sigurnost  i privatnost na tržištu
-i takođjer je prva PoS (Proof of Stake) kriptovaluta
-koja je implementirala Sapling (SHIELD) i anoniman zk-SNARKs baziran protokol.
 &lt;/p&gt;&lt;p align="justify"&gt;
 ELONCOIN koristi algoritam konsenzusa Proof of Stake (PoS),
 omogućujući svim vlasnicima ELONCOIN-a sudjelovanje u zarađi blokovih nagrada
-dok osiguravaju mrežu full node novčanicima, kao i
-vodjenje Masternode-ova za stvaranje i glasanje o prijedlozima.
+dok osiguravaju mrežu full node novčanicima.
 &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
 </translation>
     </message>
@@ -6647,8 +6640,8 @@ Pokrenite 'sapling-fetch-params' ili '.util/fetch-params.sh' te ponovno pokrenit
         <translation>Pošalji</translation>
     </message>
     <message>
-        <source>Transfer coins publicly or privately</source>
-        <translation>Pošalji novčiće javno ili privatno</translation>
+        <source>Transfer coins</source>
+        <translation>Pošalji novčiće</translation>
     </message>
     <message>
         <source>Transparent</source>

@@ -47,11 +47,11 @@ versions of Tor see [Section 3](#3-automatically-listen-on-tor).*
 
 	HiddenServiceDir /var/lib/tor/eloncoin-service/
 	HiddenServiceVersion 2
-	HiddenServicePort 51472 127.0.0.1:51472
+	HiddenServicePort 7106 127.0.0.1:7106
 	HiddenServicePort 61472 127.0.0.1:61472
 
 The directory can be different of course, but (both) port numbers should be equal to
-your eloncoind's P2P listen port (51472 by default).
+your eloncoind's P2P listen port (7106 by default).
 
 	-externalip=X   You can tell eloncoin about its publicly reachable address using
 	                this option, and this can be a v2 .onion address (v3 .onion
@@ -87,7 +87,7 @@ as well, use `discover` instead:
 
 	./eloncoind ... -discover
 
-and open port 51472 on your firewall (or use -upnp).
+and open port 7106 on your firewall (or use -upnp).
 
 If you only want to use Tor to reach .onion addresses, but not use it as a proxy
 for normal IPv4/IPv6 communication, use:

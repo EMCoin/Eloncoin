@@ -47,11 +47,11 @@ ReceiveWidget::ReceiveWidget(ELONCOINGUI* parent) :
     // Address
     setCssProperty(ui->labelAddress, "label-address-box");
 
-    /* Button Group */
-    setCssProperty(ui->pushLeft, "btn-check-left");
-    setCssProperty(ui->pushRight, "btn-check-right");
-    setCssSubtitleScreen(ui->labelSubtitle2);
-    ui->labelSubtitle2->setContentsMargins(0,2,4,0);
+    // /* Button Group */
+    // setCssProperty(ui->pushLeft, "btn-check-left");
+    // setCssProperty(ui->pushRight, "btn-check-right");
+    // setCssSubtitleScreen(ui->labelSubtitle2);
+    // ui->labelSubtitle2->setContentsMargins(0,2,4,0);
 
     setCssSubtitleScreen(ui->labelDate);
     setCssSubtitleScreen(ui->labelLabel);
@@ -109,9 +109,9 @@ ReceiveWidget::ReceiveWidget(ELONCOINGUI* parent) :
     connect(ui->btnRequest, &OptionButton::clicked, this, &ReceiveWidget::onRequestClicked);
     connect(ui->btnMyAddresses, &OptionButton::clicked, this, &ReceiveWidget::onMyAddressesClicked);
 
-    ui->pushLeft->setChecked(true);
-    connect(ui->pushLeft, &QPushButton::clicked, [this](){onTransparentSelected(true);});
-    connect(ui->pushRight,  &QPushButton::clicked, [this](){onTransparentSelected(false);});
+    // ui->pushLeft->setChecked(true);
+    // connect(ui->pushLeft, &QPushButton::clicked, [this](){onTransparentSelected(true);});
+    // connect(ui->pushRight,  &QPushButton::clicked, [this](){onTransparentSelected(false);});
 }
 
 void ReceiveWidget::loadWalletModel()

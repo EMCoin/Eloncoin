@@ -248,7 +248,7 @@
                      </property>
                     </widget>
                    </item>
-                   <item>
+                   <!-- <item>
                     <widget class="QPushButton" name="pushButton_Masternode">
                      <property name="minimumSize">
                       <size>
@@ -291,7 +291,7 @@
                       <bool>true</bool>
                      </property>
                     </widget>
-                   </item>
+                   </item> -->
                   </layout>
                  </widget>
                 </item>
@@ -525,14 +525,11 @@
                            &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;
                            ELONCOIN is a form of digital online money using blockchain technology
                            that can be easily transferred globally, instantly, and with near
-                           zero fees.  ELONCOIN incorporates market leading security &amp;
-                           privacy and is also the first PoS (Proof of Stake) Cryptocurrency
-                           to implement Sapling(SHIELD), a zk-SNARKs based privacy protocol.
+                           zero fees.
                            &lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;
                            ELONCOIN utilizes a Proof of Stake (PoS) consensus system algorithm,
                            allowing all owners of ELONCOIN to participate in earning block rewards
-                           while securing the network with full node wallets, as well as to
-                           run Masternodes to create and vote on proposals.
+                           while securing the network with full node wallets.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                          </string>
                         </property>
@@ -849,7 +846,7 @@
                    </layout>
                   </widget>
                  </item>
-                 <item>
+                 <!-- <item>
                   <widget class="QWidget" name="widget_Masternode" native="true">
                    <layout class="QHBoxLayout" name="horizontalpage_Masternode" stretch="0,1">
                     <item alignment="Qt::AlignTop">
@@ -1068,7 +1065,7 @@
                     </item>
                    </layout>
                   </widget>
-                 </item>
+                 </item> -->
                 </layout>
                </widget>
               </widget>

@@ -81,7 +81,7 @@
             <item>
              <widget class="QLabel" name="labelSubtitle1">
               <property name="text">
-               <string>Transfer coins publicly or privately</string>
+               <string>Transfer coins</string>
               </property>
              </widget>
             </item>
@@ -100,7 +100,7 @@
             </property>
            </spacer>
           </item>
-          <item>
+          <!-- <item>
            <layout class="QVBoxLayout" name="verticalLayout_6">
             <property name="spacing">
              <number>3</number>
@@ -108,9 +108,7 @@
             <item alignment="Qt::AlignHCenter">
              <widget class="QGroupBox" name="groupBox">
               <property name="styleSheet">
-               <string notr="true">#groupBox{
-padding-top:2px;
-}</string>
+               <string notr="true">#groupBox{padding-top:2px;}</string>
               </property>
               <property name="title">
                <string/>
@@ -213,7 +211,7 @@ padding-top:2px;
              </widget>
             </item>
            </layout>
-          </item>
+          </item> -->
          </layout>
         </item>
         <item>

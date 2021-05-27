@@ -55,7 +55,7 @@ DashboardWidget::DashboardWidget(ELONCOINGUI* parent) :
     setCssProperty(ui->labelSquareEmc, "square-chart-emc");
     setCssProperty(ui->labelSquarezEmc, "square-chart-zemc");
     setCssProperty(ui->labelEmc, "text-chart-emc");
-    setCssProperty(ui->labelZemc, "text-chart-zemc");
+    // setCssProperty(ui->labelZemc, "text-chart-zemc");
 
     // Staking Amount
     QFont fontBold;
@@ -63,7 +63,7 @@ DashboardWidget::DashboardWidget(ELONCOINGUI* parent) :
 
     setCssProperty(ui->labelChart, "legend-chart");
     setCssProperty(ui->labelAmountEmc, "text-stake-emc-disable");
-    setCssProperty(ui->labelAmountZemc, "text-stake-zemc-disable");
+    // setCssProperty(ui->labelAmountZemc, "text-stake-zemc-disable");
 
     setCssProperty({ui->pushButtonAll,  ui->pushButtonMonth, ui->pushButtonYear}, "btn-check-time");
     setCssProperty({ui->comboBoxMonths,  ui->comboBoxYears}, "btn-combo-chart-selected");
@@ -683,14 +683,14 @@ void DashboardWidget::onChartRefreshed()
     nDisplayUnit = walletModel->getOptionsModel()->getDisplayUnit();
     if (chartData->totalEmc > 0 || chartData->totalZemc > 0) {
         setCssProperty(ui->labelAmountEmc, "text-stake-emc");
-        setCssProperty(ui->labelAmountZemc, "text-stake-zemc");
+        // setCssProperty(ui->labelAmountZemc, "text-stake-zemc");
     } else {
         setCssProperty(ui->labelAmountEmc, "text-stake-emc-disable");
-        setCssProperty(ui->labelAmountZemc, "text-stake-zemc-disable");
+        // setCssProperty(ui->labelAmountZemc, "text-stake-zemc-disable");
     }
-    forceUpdateStyle({ui->labelAmountEmc, ui->labelAmountZemc});
+    // forceUpdateStyle({ui->labelAmountEmc, ui->labelAmountZemc});
     ui->labelAmountEmc->setText(GUIUtil::formatBalance(chartData->totalEmc, nDisplayUnit));
-    ui->labelAmountZemc->setText(GUIUtil::formatBalance(chartData->totalZemc, nDisplayUnit, true));
+    // ui->labelAmountZemc->setText(GUIUtil::formatBalance(chartData->totalZemc, nDisplayUnit, true));
 
     series->append(set0);
     if (hasZemcStakes)
