@@ -1,13 +1,13 @@
 ELONCOIN Core version 3.0.4 is now available from:
 
-  <https://github.com/eloncoin-project/eloncoin/releases>
+  <https://github.com/lightlord1233/Eloncoin/releases>
 
 This is a new minor-revision version release, including various bug fixes and
 performance improvements, as well as updated translations.
 
 Please report bugs using the issue tracker at github:
 
-  <https://github.com/eloncoin-project/eloncoin/issues>
+  <https://github.com/lightlord1233/Eloncoin/issues>
 
 
 Mandatory Update

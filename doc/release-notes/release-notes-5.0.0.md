@@ -1,8 +1,8 @@
-ELONCOIN Core version *v5.0.0* is now available from:  <https://github.com/eloncoin-project/eloncoin/releases>
+ELONCOIN Core version *v5.0.0* is now available from:  <https://github.com/lightlord1233/Eloncoin/releases>
 
 This is a new major version release, including various bug fixes and performance improvements, as well as updated translations.
 
-Please report bugs using the issue tracker at github: <https://github.com/eloncoin-project/eloncoin/issues>
+Please report bugs using the issue tracker at github: <https://github.com/lightlord1233/Eloncoin/issues>
 
 
 Mandatory Update
@@ -158,7 +158,7 @@ Account API Removed
 The 'account' API was deprecated in v4.2.0, and has been fully removed in v5.0.0.
 The 'label' API was introduced in v4.2.0 as a replacement for accounts.
 
-See the release notes from [v4.2.0](https://github.com/ELONCOIN-Project/ELONCOIN/blob/master/doc/release-notes/release-notes-4.2.0.md#label-and-account-apis-for-wallet) for a full description of the changes from the 'account' API to the 'label' API.
+See the release notes from [v4.2.0](https://github.com/lightlord1233/Eloncoin/blob/master/doc/release-notes/release-notes-4.2.0.md#label-and-account-apis-for-wallet) for a full description of the changes from the 'account' API to the 'label' API.
 
 SwiftX Removed
 --------------

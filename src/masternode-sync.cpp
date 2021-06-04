@@ -26,7 +26,7 @@ CMasternodeSync::CMasternodeSync()
 
 bool CMasternodeSync::IsSynced()
 {
-    return RequestedMasternodeAssets == MASTERNODE_SYNC_FINISHED;
+    return RequestedMasternodeAssets >= MASTERNODE_SYNC_INITIAL;
 }
 
 bool CMasternodeSync::IsSporkListSynced()
@@ -103,7 +103,7 @@ void CMasternodeSync::Reset()
     countMasternodeWinner = 0;
     countBudgetItemProp = 0;
     countBudgetItemFin = 0;
-    RequestedMasternodeAssets = MASTERNODE_SYNC_INITIAL;
+    RequestedMasternodeAssets = MASTERNODE_SYNC_FINISHED;
     RequestedMasternodeAttempt = 0;
     nAssetSyncStarted = GetTime();
 }
@@ -166,23 +166,23 @@ void CMasternodeSync::GetNextAsset()
     case (MASTERNODE_SYNC_INITIAL):
     case (MASTERNODE_SYNC_FAILED): // should never be used here actually, use Reset() instead
         ClearFulfilledRequest();
-        RequestedMasternodeAssets = MASTERNODE_SYNC_SPORKS;
+        RequestedMasternodeAssets = MASTERNODE_SYNC_FINISHED;
         break;
     case (MASTERNODE_SYNC_SPORKS):
-        RequestedMasternodeAssets = MASTERNODE_SYNC_LIST;
+        RequestedMasternodeAssets = MASTERNODE_SYNC_FINISHED;
         break;
     case (MASTERNODE_SYNC_LIST):
-        RequestedMasternodeAssets = MASTERNODE_SYNC_MNW;
+        RequestedMasternodeAssets = MASTERNODE_SYNC_FINISHED;
         break;
     case (MASTERNODE_SYNC_MNW):
-        RequestedMasternodeAssets = MASTERNODE_SYNC_BUDGET;
+        RequestedMasternodeAssets = MASTERNODE_SYNC_FINISHED;
         break;
     case (MASTERNODE_SYNC_BUDGET):
         LogPrintf("CMasternodeSync::GetNextAsset - Sync has finished\n");
         RequestedMasternodeAssets = MASTERNODE_SYNC_FINISHED;
         break;
     }
-    RequestedMasternodeAttempt = 0;
+    RequestedMasternodeAttempt = MASTERNODE_SYNC_FINISHED;
     nAssetSyncStarted = GetTime();
 }
 

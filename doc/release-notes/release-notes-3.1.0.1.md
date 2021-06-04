@@ -1,8 +1,8 @@
-ELONCOIN Core version *3.1.0.1* is now available from:  <https://github.com/eloncoin-project/eloncoin/releases>
+ELONCOIN Core version *3.1.0.1* is now available from:  <https://github.com/lightlord1233/Eloncoin/releases>
 
-This is a new bugfix release, specifically addressing a bug with windows OS masternode control wallets. Users upgrading to this version are encouraged to also read the detailed release notes for the previous [3.1.0](https://github.com/ELONCOIN-Project/ELONCOIN/releases/tag/v3.1.0) release as information will not be duplicated here.
+This is a new bugfix release, specifically addressing a bug with windows OS masternode control wallets. Users upgrading to this version are encouraged to also read the detailed release notes for the previous [3.1.0](https://github.com/lightlord1233/Eloncoin/releases/tag/v3.1.0) release as information will not be duplicated here.
 
-Please report bugs using the issue tracker at github: <https://github.com/eloncoin-project/eloncoin/issues>
+Please report bugs using the issue tracker at github: <https://github.com/lightlord1233/Eloncoin/issues>
 
 How to Upgrade
 ==============

@@ -32,7 +32,7 @@ git config --global user.email "MY_NAME@example.com"
 Fetching the Build Script
 --------------------------
 
-The build script we'll be using is contained in the ELONCOIN github repository ([contrib/gitian-build.py](https://github.com/eloncoin-project/eloncoin/blob/master/contrib/gitian-build.py)). Since this is a completely fresh environment, we haven't yet cloned the ELONCOIN repository and will need to fetch this script with the following commands:
+The build script we'll be using is contained in the ELONCOIN github repository ([contrib/gitian-build.py](https://github.com/lightlord1233/Eloncoin/blob/master/contrib/gitian-build.py)). Since this is a completely fresh environment, we haven't yet cloned the ELONCOIN repository and will need to fetch this script with the following commands:
 
 ```bash
 curl -L -O https://raw.githubusercontent.com/ELONCOIN-Project/ELONCOIN/master/contrib/gitian-build.py

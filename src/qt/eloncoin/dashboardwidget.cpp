@@ -53,7 +53,7 @@ DashboardWidget::DashboardWidget(ELONCOINGUI* parent) :
     // Staking Information
     setCssSubtitleScreen(ui->labelMessage);
     setCssProperty(ui->labelSquareEmc, "square-chart-emc");
-    setCssProperty(ui->labelSquarezEmc, "square-chart-zemc");
+    // setCssProperty(ui->labelSquarezEmc, "square-chart-zemc");
     setCssProperty(ui->labelEmc, "text-chart-emc");
     // setCssProperty(ui->labelZemc, "text-chart-zemc");
 
@@ -469,7 +469,7 @@ void DashboardWidget::changeChartColors()
     } else {
         gridY = QColor("#40ffffff");
         axisY->setGridLineColor(gridY);
-        gridLineColorX = QColor(15,11,22);
+        gridLineColorX = QColor(22,16,11);
         linePenColorY =  gridLineColorX;
         backgroundColor = linePenColorY;
     }
@@ -666,8 +666,8 @@ void DashboardWidget::onChartRefreshed()
     // init sets
     set0 = new QBarSet(CURRENCY_UNIT.c_str());
     set1 = new QBarSet("z" + QString(CURRENCY_UNIT.c_str()));
-    set0->setColor(QColor(92,75,125));
-    set1->setColor(QColor(176,136,255));
+    set0->setColor(QColor(125,89,75));
+    set1->setColor(QColor(255,175,136));
 
     if (!series) {
         series = new QBarSeries();

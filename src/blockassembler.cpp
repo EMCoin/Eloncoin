@@ -109,7 +109,7 @@ bool CreateCoinbaseTx(CBlock* pblock, const CScript& scriptPubKeyIn, CBlockIndex
     txNew.vout[0].scriptPubKey = scriptPubKeyIn;
 
     //Masternode and general budget payments
-    FillBlockPayee(txNew, nHeight, false);
+    // FillBlockPayee(txNew, nHeight, false);
 
     txNew.vin[0].scriptSig = CScript() << nHeight << OP_0;
     // If no payee was detected, then the whole block value goes to the first output.

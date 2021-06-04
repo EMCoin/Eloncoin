@@ -714,7 +714,7 @@
                   </property>
                  </spacer>
                 </item>
-                <item>
+                <!-- <item>
                  <widget class="QLabel" name="labelSquarezEmc">
                   <property name="minimumSize">
                    <size>
@@ -732,7 +732,7 @@
                    <string/>
                   </property>
                  </widget>
-                </item>
+                </item> -->
                 <!-- <item>
                  <widget class="QLabel" name="labelZemc">
                   <property name="text">

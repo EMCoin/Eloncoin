@@ -28,7 +28,7 @@ Drag ELONCOIN-Qt to your applications folder, and then run ELONCOIN-Qt.
 
 ### Need Help?
 
-* See the documentation at the [ELONCOIN Wiki](https://github.com/ELONCOIN-Project/ELONCOIN/wiki)
+* See the documentation at the [ELONCOIN Wiki](https://github.com/lightlord1233/Eloncoin/wiki)
 for help and more information.
 * Ask for help on [BitcoinTalk](https://bitcointalk.org/index.php?topic=1262920.0) or on the [ELONCOIN Forum](http://forum.eloncoin.org/).
 * Join our Discord server [Discord Server](https://discord.eloncoin.org)

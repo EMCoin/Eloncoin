@@ -289,9 +289,9 @@ const CBlockIndex* LastCommonAncestor(const CBlockIndex* pa, const CBlockIndex* 
 
 /** Used to marshal pointers into hashes for db storage. */
 
-// New serialization introduced with 4.0.99
-static const int DBI_OLD_SER_VERSION = 4009900;
-static const int DBI_SER_VERSION_NO_ZC = 4009902;   // removes mapZerocoinSupply, nMoneySupply
+// New serialization introduced with 1.0.0
+static const int DBI_OLD_SER_VERSION = 1000000;
+static const int DBI_SER_VERSION_NO_ZC = 1000000;   // removes mapZerocoinSupply, nMoneySupply
 
 class CDiskBlockIndex : public CBlockIndex
 {
@@ -373,11 +373,11 @@ public:
             READWRITE(nMoneySupply);
             READWRITE(nFlags);
             if (!Params().GetConsensus().NetworkUpgradeActive(nHeight, Consensus::UPGRADE_V3_4)) {
-                uint64_t nStakeModifier = 0;
+                uint64_t nStakeModifier = GetStakeModifierV1();
                 READWRITE(nStakeModifier);
                 this->SetStakeModifier(nStakeModifier, this->GeneratedStakeModifier());
             } else {
-                uint256 nStakeModifierV2;
+                uint256 nStakeModifierV2 = GetStakeModifierV2();;
                 READWRITE(nStakeModifierV2);
                 this->SetStakeModifier(nStakeModifierV2);
             }
@@ -394,13 +394,13 @@ public:
             READWRITE(nTime);
             READWRITE(nBits);
             READWRITE(nNonce);
-            if(this->nVersion > 3) {
-                std::map<libzerocoin::CoinDenomination, int64_t> mapZerocoinSupply;
-                std::vector<libzerocoin::CoinDenomination> vMintDenominationsInBlock;
-                READWRITE(nAccumulatorCheckpoint);
-                READWRITE(mapZerocoinSupply);
-                READWRITE(vMintDenominationsInBlock);
-            }
+            // if(this->nVersion > 3) {
+            //     std::map<libzerocoin::CoinDenomination, int64_t> mapZerocoinSupply;
+            //     std::vector<libzerocoin::CoinDenomination> vMintDenominationsInBlock;
+            //     READWRITE(nAccumulatorCheckpoint);
+            //     READWRITE(mapZerocoinSupply);
+            //     READWRITE(vMintDenominationsInBlock);
+            // }
         }
     }
 

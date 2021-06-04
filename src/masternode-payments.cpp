@@ -273,13 +273,13 @@ bool IsBlockPayeeValid(const CBlock& block, int nBlockHeight)
     // In all cases a masternode will get the payment for this block
 
     //check for masternode payee
-    if (masternodePayments.IsTransactionValid(txNew, nBlockHeight))
-        return true;
-    LogPrint(BCLog::MASTERNODE,"Invalid mn payment detected %s\n", txNew.ToString().c_str());
+    // if (masternodePayments.IsTransactionValid(txNew, nBlockHeight))
+    //     return true;
+    // LogPrint(BCLog::MASTERNODE,"Invalid mn payment detected %s\n", txNew.ToString().c_str());
 
-    if (sporkManager.IsSporkActive(SPORK_8_MASTERNODE_PAYMENT_ENFORCEMENT))
-        return false;
-    LogPrint(BCLog::MASTERNODE,"Masternode payment enforcement is disabled, accepting block\n");
+    // if (sporkManager.IsSporkActive(SPORK_8_MASTERNODE_PAYMENT_ENFORCEMENT))
+    //     return false;
+    // LogPrint(BCLog::MASTERNODE,"Masternode payment enforcement is disabled, accepting block\n");
     return true;
 }
 
@@ -288,11 +288,11 @@ void FillBlockPayee(CMutableTransaction& txNew, const int nHeight, bool fProofOf
 {
     if (nHeight == 0) return;
 
-    if (!sporkManager.IsSporkActive(SPORK_13_ENABLE_SUPERBLOCKS) ||           // if superblocks are not enabled
-            !g_budgetman.FillBlockPayee(txNew, nHeight, fProofOfStake) ) {    // or this is not a superblock,
-        // ... or there's no budget with enough votes, then pay a masternode
-        masternodePayments.FillBlockPayee(txNew, nHeight, fProofOfStake);
-    }
+    // if (!sporkManager.IsSporkActive(SPORK_13_ENABLE_SUPERBLOCKS) ||           // if superblocks are not enabled
+    //         !g_budgetman.FillBlockPayee(txNew, nHeight, fProofOfStake) ) {    // or this is not a superblock,
+    //     // ... or there's no budget with enough votes, then pay a masternode
+    //     masternodePayments.FillBlockPayee(txNew, nHeight, fProofOfStake);
+    // }
 }
 
 std::string GetRequiredPaymentsString(int nBlockHeight)
