@@ -3789,8 +3789,8 @@ Ha habido un error al tratar de guardar la libreta de direcciones en %1. Por fav
         <translation>2) ¿Por qué mis EMC no se pueden gastar?</translation>
     </message>
     <message>
-        <source>https://ELONCOIN.org/</source>
-        <translation>https://ELONCOIN.org/</translation>
+        <source>https://eloncoin.org/</source>
+        <translation>https://eloncoin.org/</translation>
     </message>
     <message>
         <source>1</source>

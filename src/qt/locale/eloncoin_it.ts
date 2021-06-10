@@ -3791,8 +3791,8 @@ Si è verificato un errore nel tentativo di salvare l'elenco degli indirizzi in 
         <translation>2) Perché i miei EMC non sono spendibili?</translation>
     </message>
     <message>
-        <source>https://ELONCOIN.org/</source>
-        <translation>https://ELONCOIN.org/</translation>
+        <source>https://eloncoin.org/</source>
+        <translation>https://eloncoin.org/</translation>
     </message>
     <message>
         <source>1</source>

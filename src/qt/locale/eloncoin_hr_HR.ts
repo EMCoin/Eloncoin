@@ -3960,8 +3960,8 @@ Došlo je do greške prilikom spremanja popisa adresa u %1. Molimo pokušajte po
         <translation>2) Zašto se moji EMC ne mogu potrošiti?</translation>
     </message>
     <message>
-        <source>https://ELONCOIN.org/</source>
-        <translation>https://ELONCOIN.org/</translation>
+        <source>https://eloncoin.org/</source>
+        <translation>https://eloncoin.org/</translation>
     </message>
     <message>
         <source>1</source>

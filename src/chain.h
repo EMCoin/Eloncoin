@@ -328,7 +328,7 @@ public:
             READWRITE(VARINT(nUndoPos));
 
         if (nSerVersion >= DBI_SER_VERSION_NO_ZC) {
-            // Serialization with CLIENT_VERSION = 4009902+
+            // Serialization with CLIENT_VERSION = 1000000+
             READWRITE(nFlags);
             READWRITE(this->nVersion);
             READWRITE(vStakeModifier);

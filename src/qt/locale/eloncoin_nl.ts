@@ -3822,8 +3822,8 @@ Er was een fout opgetreden tijdens het opslaan van deze adreslijst naar %1. Prob
         <translation>2) Waarom is mijn EMC niet besteedbaar?</translation>
     </message>
     <message>
-        <source>https://ELONCOIN.org/</source>
-        <translation>https://ELONCOIN.org/</translation>
+        <source>https://eloncoin.org/</source>
+        <translation>https://eloncoin.org/</translation>
     </message>
     <message>
         <source>1</source>

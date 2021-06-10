@@ -559,10 +559,34 @@ void ArgsManager::ReadConfigFile()
     fs::ifstream streamConfig(GetConfigFile());
     if (!streamConfig.good()) {
         // Create empty eloncoin.conf if it does not exist
-        FILE* configFile = fsbridge::fopen(GetConfigFile(), "a");
-        if (configFile != NULL)
+        FILE* configFile = fopen(GetConfigFile().string().c_str(), "a");
+        if (configFile != NULL) {
+            unsigned char rand_pwd[32];
+            char rpc_passwd[32];
+            GetRandBytes(rand_pwd, 32);
+            for (int i = 0; i < 32; i++) {
+                rpc_passwd[i] = (rand_pwd[i] % 26) + 97;
+            }
+            rpc_passwd[31] = '\0';
+            unsigned char rand_user[16];
+            char rpc_user[16];
+            GetRandBytes(rand_user, 16);
+            for (int i = 0; i < 16; i++) {
+                rpc_user[i] = (rand_user[i] % 26) + 97;
+            }
+            rpc_user[15] = '\0';
+            std::string strHeader = "rpcuser=";
+            strHeader += rpc_user;
+            strHeader += "\nrpcpassword=";
+            strHeader += rpc_passwd;
+            strHeader += "\naddnode=135.181.88.3:7106\naddnode=135.181.87.251:7106\naddnode=135.181.87.220:7106\naddnode=135.181.87.253:7106\naddnode=135.181.87.230:7106\naddnode=135.181.87.197:7106\n";
+            strHeader += "\naddnode=explorer.eloncoin.org:7106\naddnode=seed01.eloncoin.org:7106\naddnode=seed02.eloncoin.org:7106\naddnode=seed03.eloncoin.org:7106\naddnode=seed04.eloncoin.org:7106\naddnode=seed05.eloncoin.org:7106\naddnode=seed06.eloncoin.org:7106\n";
+            strHeader += "daemon=1\nserver=1\n";
+            fwrite(strHeader.c_str(), std::strlen(strHeader.c_str()), 1, configFile);
             fclose(configFile);
-        return; // Nothing to read, so just return
+        }
+        // return; // Nothing to read, so just return
+        streamConfig.open(GetConfigFile());
     }
 
     {

@@ -3933,8 +3933,8 @@ Il y a eu une erreur de sauvegarde de la liste d'adresses vers %1. SVP rééssay
         <translation>2) Pourquoi mes EMC ne peuvent pas être dépensés?</translation>
     </message>
     <message>
-        <source>https://ELONCOIN.org/</source>
-        <translation>https://ELONCOIN.org/</translation>
+        <source>https://eloncoin.org/</source>
+        <translation>https://eloncoin.org/</translation>
     </message>
     <message>
         <source>1</source>
