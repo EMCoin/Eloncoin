@@ -11,7 +11,7 @@ ELONCOIN is an open source community-driven cryptocurrency, focused on five main
 
 (3) Ease of Use: ELONCOIN is determined to offer the best possible graphical interface for a core node/wallet. A full featured graphical product for new and advanced users.
 
-A lot more information and specs at [eloncoin.org](https://www.eloncoin.org/). Join the community at [ELONCOIN Discord](https://discordapp.com/invite/eloncoin).
+A lot more information and specs at [eloncoin.org](https://www.eloncoin.org/). Join the community at [ELONCOIN Discord](https://discord.gg/pCVjZ8DP).
 
 ## License
 ELONCOIN Core is released under the terms of the MIT license. See [COPYING](https://github.com/lightlord1233/Eloncoin/blob/master/COPYING) for more information or see https://opensource.org/licenses/MIT.
