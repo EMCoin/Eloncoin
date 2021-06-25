@@ -1,0 +1,4 @@
+qt/libbitcoinqt_a-qrc_eloncoin.o: qt/qrc_eloncoin.cpp \
+ /usr/include/stdc-predef.h
+
+/usr/include/stdc-predef.h:

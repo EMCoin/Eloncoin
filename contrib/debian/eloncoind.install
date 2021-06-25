@@ -1,0 +1,3 @@
+usr/local/bin/eloncoind usr/bin
+usr/local/bin/eloncoin-cli usr/bin
+debian/examples/eloncoin.conf etc/eloncoin

@@ -1,0 +1,33 @@
+# /etc/conf.d/eloncoind: config file for /etc/init.d/eloncoind
+
+# Config file location
+#BITCOIND_CONFIGFILE="/etc/eloncoin/eloncoin.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
+#BITCOIND_PIDDIR="/var/run/eloncoind"
+
+# What filename to give the pidfile
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/eloncoind.pid"
+
+# Where to write eloncoind data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/eloncoind"
+
+# User and group to own eloncoind process
+#BITCOIND_USER="eloncoin"
+#BITCOIND_GROUP="eloncoin"
+
+# Path to eloncoind executable
+#BITCOIND_BIN="/usr/bin/eloncoind"
+
+# Nice value to run eloncoind under
+#BITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+#BITCOIND_OPTS=""
+
+# The timeout in seconds OpenRC will wait for bitcoind to terminate
+# after a SIGTERM has been raised.
+# Note that this will be mapped as argument to start-stop-daemon's
+# '--retry' option, which means you can specify a retry schedule
+# here. For more information see man 8 start-stop-daemon.
+BITCOIND_SIGTERM_TIMEOUT=60
