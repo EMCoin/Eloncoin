@@ -9,11 +9,11 @@ SetCompressor /SOLID lzma
 !define URL https://www.eloncoin.org
 
 # MUI Symbol Definitions
-!define MUI_ICON "/home/ksk/Works/2021/ElonCoin/works/ubuntu_works/ElonCoin-1.0.0/share/pixmaps/eloncoin.ico"
-!define MUI_WELCOMEFINISHPAGE_BITMAP "/home/ksk/Works/2021/ElonCoin/works/ubuntu_works/ElonCoin-1.0.0/share/pixmaps/nsis-wizard.bmp"
+!define MUI_ICON "/home/ksk/Works/2021/ElonCoin/works/ubuntu_works/ElonCoin-src/share/pixmaps/eloncoin.ico"
+!define MUI_WELCOMEFINISHPAGE_BITMAP "/home/ksk/Works/2021/ElonCoin/works/ubuntu_works/ElonCoin-src/share/pixmaps/nsis-wizard.bmp"
 !define MUI_HEADERIMAGE
 !define MUI_HEADERIMAGE_RIGHT
-!define MUI_HEADERIMAGE_BITMAP "/home/ksk/Works/2021/ElonCoin/works/ubuntu_works/ElonCoin-1.0.0/share/pixmaps/nsis-header.bmp"
+!define MUI_HEADERIMAGE_BITMAP "/home/ksk/Works/2021/ElonCoin/works/ubuntu_works/ElonCoin-src/share/pixmaps/nsis-header.bmp"
 !define MUI_FINISHPAGE_NOAUTOCLOSE
 !define MUI_STARTMENUPAGE_REGISTRY_ROOT HKLM
 !define MUI_STARTMENUPAGE_REGISTRY_KEY ${REGKEY}
@@ -21,7 +21,7 @@ SetCompressor /SOLID lzma
 !define MUI_STARTMENUPAGE_DEFAULTFOLDER "ELONCOIN Core"
 !define MUI_FINISHPAGE_RUN $INSTDIR\eloncoin-qt
 !define MUI_UNICON "${NSISDIR}\Contrib\Graphics\Icons\modern-uninstall.ico"
-!define MUI_UNWELCOMEFINISHPAGE_BITMAP "/home/ksk/Works/2021/ElonCoin/works/ubuntu_works/ElonCoin-1.0.0/share/pixmaps/nsis-wizard.bmp"
+!define MUI_UNWELCOMEFINISHPAGE_BITMAP "/home/ksk/Works/2021/ElonCoin/works/ubuntu_works/ElonCoin-src/share/pixmaps/nsis-wizard.bmp"
 !define MUI_UNFINISHPAGE_NOAUTOCLOSE
 
 # Included files
@@ -47,7 +47,7 @@ Var StartMenuGroup
 !insertmacro MUI_LANGUAGE English
 
 # Installer attributes
-OutFile /home/ksk/Works/2021/ElonCoin/works/ubuntu_works/ElonCoin-1.0.0/eloncoin-1.0.0-win-setup.exe
+OutFile /home/ksk/Works/2021/ElonCoin/works/ubuntu_works/ElonCoin-src/eloncoin-1.0.1-win-setup.exe
 !if "" == "64"
 InstallDir $PROGRAMFILES64\ElonCoin
 !else
@@ -57,12 +57,12 @@ CRCCheck on
 XPStyle on
 BrandingText " "
 ShowInstDetails show
-VIProductVersion 1.0.0.0
+VIProductVersion 1.0.1.0
 VIAddVersionKey ProductName "ELONCOIN Core"
-VIAddVersionKey ProductVersion "1.0.0"
+VIAddVersionKey ProductVersion "1.0.1"
 VIAddVersionKey CompanyName "${COMPANY}"
 VIAddVersionKey CompanyWebsite "${URL}"
-VIAddVersionKey FileVersion "1.0.0"
+VIAddVersionKey FileVersion "1.0.1"
 VIAddVersionKey FileDescription ""
 VIAddVersionKey LegalCopyright ""
 InstallDirRegKey HKCU "${REGKEY}" Path
@@ -72,17 +72,17 @@ ShowUninstDetails show
 Section -Main SEC0000
     SetOutPath $INSTDIR
     SetOverwrite on
-    File /home/ksk/Works/2021/ElonCoin/works/ubuntu_works/ElonCoin-1.0.0/release/eloncoin-qt
-    File /oname=COPYING.txt /home/ksk/Works/2021/ElonCoin/works/ubuntu_works/ElonCoin-1.0.0/COPYING
-    File /oname=readme.txt /home/ksk/Works/2021/ElonCoin/works/ubuntu_works/ElonCoin-1.0.0/doc/README_windows.txt
+    File /home/ksk/Works/2021/ElonCoin/works/ubuntu_works/ElonCoin-src/release/eloncoin-qt
+    File /oname=COPYING.txt /home/ksk/Works/2021/ElonCoin/works/ubuntu_works/ElonCoin-src/COPYING
+    File /oname=readme.txt /home/ksk/Works/2021/ElonCoin/works/ubuntu_works/ElonCoin-src/doc/README_windows.txt
     SetOutPath $INSTDIR\daemon
-    File /home/ksk/Works/2021/ElonCoin/works/ubuntu_works/ElonCoin-1.0.0/release/eloncoind
-    File /home/ksk/Works/2021/ElonCoin/works/ubuntu_works/ElonCoin-1.0.0/release/eloncoin-cli
+    File /home/ksk/Works/2021/ElonCoin/works/ubuntu_works/ElonCoin-src/release/eloncoind
+    File /home/ksk/Works/2021/ElonCoin/works/ubuntu_works/ElonCoin-src/release/eloncoin-cli
     SetOutPath $INSTDIR\doc
-    File /r /home/ksk/Works/2021/ElonCoin/works/ubuntu_works/ElonCoin-1.0.0/doc\*.*
+    File /r /home/ksk/Works/2021/ElonCoin/works/ubuntu_works/ElonCoin-src/doc\*.*
     SetOutPath $APPDATA\ELONCOINParams
-    File /home/ksk/Works/2021/ElonCoin/works/ubuntu_works/ElonCoin-1.0.0/params/sapling-output.params
-    File /home/ksk/Works/2021/ElonCoin/works/ubuntu_works/ElonCoin-1.0.0/params/sapling-spend.params
+    File /home/ksk/Works/2021/ElonCoin/works/ubuntu_works/ElonCoin-src/params/sapling-output.params
+    File /home/ksk/Works/2021/ElonCoin/works/ubuntu_works/ElonCoin-src/params/sapling-spend.params
     SetOutPath $INSTDIR
     WriteRegStr HKCU "${REGKEY}\Components" Main 1
 SectionEnd
@@ -98,7 +98,7 @@ Section -post SEC0001
     CreateShortcut "$SMPROGRAMS\$StartMenuGroup\Uninstall $(^Name).lnk" $INSTDIR\uninstall.exe
     !insertmacro MUI_STARTMENU_WRITE_END
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" DisplayName "$(^Name)"
-    WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" DisplayVersion "1.0.0"
+    WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" DisplayVersion "1.0.1"
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" Publisher "${COMPANY}"
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" URLInfoAbout "${URL}"
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" DisplayIcon $INSTDIR\uninstall.exe

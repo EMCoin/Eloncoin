@@ -1,4 +1,5 @@
-// Copyright (c) 2017-2020 The ELONCOIN developers
+// Copyright (c) 2017-2020 The PIVX developers
+// Copyright (c) 2021- The ELONCOIN developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or https://www.opensource.org/licenses/mit-license.php.
 
